@@ -964,7 +964,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:31:35" itemprop="dateModified" datetime="2021-06-09T01:31:35+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -991,7 +991,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>600</span>
+              <span>597</span>
             </span>
 
 
@@ -1023,7 +1023,7 @@
 <p>manjaro+awesome下测试通过</p>
 </blockquote>
 <p>确实OK了。最后再加一个systemd服务在开机的时候自动启动就好了：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=GSD-Xsettings Service</span><br><span class="line">After=rc-local.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">#WorkingDirectory=/home/sieve</span><br><span class="line">ExecStart=/usr/lib/gsd-xsettings</span><br><span class="line">Restart=always</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=GSD-Xsettings Service</span><br><span class="line">After=rc-local.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">ExecStart=/usr/lib/gsd-xsettings</span><br><span class="line">Restart=always</span><br></pre></td></tr></table></figure>
 
 <h1 id="gentoo"><a href="#gentoo" class="headerlink" title="gentoo"></a>gentoo</h1><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>gentoo下官方当然是没有这个包的，所以要靠野包(overlay)来实现。首先是安装layman来管理overlay，然后<code>layman -L &amp;&amp; layman -a deepin</code>把deepin的overlay加进去。他们的github是：<a target="_blank" rel="noopener" href="https://github.com/zhtengw/deepin-overlay">deepin-overlay</a>。 第二步，<code>emerge --ask deepin-wine-wechat</code>，甚至可以加上<code>--newuse --update</code>，然后就会出现一大堆条件未满足，一般会在<code>/etc/portage/package.use</code>文件夹里面产生<code>._cfg</code>开头的文件，把那个文件<code>cat</code>进<code>/etc/portage/package.use</code>里面的一个文件里面就好了，我是<code>cat</code>进了<code>wechat</code>文件里面。然后再来一次<code>emerge</code>，这次应该就能开始编译了。</p>
           <!--noindex-->
@@ -1513,7 +1513,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">181</span>
+        <span class="site-state-item-count">183</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

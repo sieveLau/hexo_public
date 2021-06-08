@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:12:05" itemprop="dateModified" datetime="2021-06-09T01:12:05+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,12 +283,11 @@
           <blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yangjvn/article/details/47185589#t6">CSDN-harttle：Linux下的触摸板设置：以 Arch Linux 为例</a></p>
 </blockquote>
-<span id="more"></span>
 <p>Synaptics驱动：xf86-input-synaptics</p>
-<p>外接鼠标时禁用触摸板：/etc/udev/rules.d/01-touchpad.rules </p>
+<p>外接鼠标时禁用触摸板：<code>/etc/udev/rules.d/01-touchpad.rules </code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ACTION==&quot;add&quot;, SUBSYSTEM==&quot;input&quot;, KERNEL==&quot;mouse[0-9]&quot;, ENV&#123;DISPLAY&#125;=&quot;:0.0&quot;, ENV&#123;XAUTHORITY&#125;=&quot;/home/_username_/.Xauthority&quot;, ENV&#123;ID_CLASS&#125;=&quot;mouse&quot;, RUN+=&quot;/usr/bin/synclient TouchpadOff=1&quot; ACTION==&quot;remove&quot;, SUBSYSTEM==&quot;input&quot;, KERNEL==&quot;mouse[0-9]&quot;, ENV&#123;DISPLAY&#125;=&quot;:0.0&quot;, ENV&#123;XAUTHORITY&#125;=&quot;/home/_username_/.Xauthority&quot;, ENV&#123;ID_CLASS&#125;=&quot;mouse&quot;, RUN+=&quot;/usr/bin/synclient TouchpadOff=0&quot;</span><br></pre></td></tr></table></figure>
 
-<p>触摸板高级配置：/etc/X11/xorg.conf.d/50-synaptics.conf </p>
+<p>触摸板高级配置：<code>/etc/X11/xorg.conf.d/50-synaptics.conf </code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Section &quot;InputClass&quot; </span><br><span class="line">Identifier &quot;touchpad catchall&quot; </span><br><span class="line">Driver &quot;synaptics&quot; </span><br><span class="line">MatchIsTouchpad &quot;on&quot; </span><br><span class="line">Option &quot;TapButton1&quot; &quot;1&quot; #单指敲击产生左键事件 </span><br><span class="line">Option &quot;TapButton2&quot; &quot;2&quot; #双指敲击产生中键事件 </span><br><span class="line">Option &quot;TapButton3&quot; &quot;3&quot; #三指敲击产生右键事件 </span><br><span class="line">Option &quot;VertEdgeScroll&quot; &quot;on&quot; #滚动操作：横向、纵向、环形 </span><br><span class="line">Option &quot;VertTwoFingerScroll&quot; &quot;on&quot; </span><br><span class="line">Option &quot;HorizEdgeScroll&quot; &quot;on&quot; </span><br><span class="line">Option &quot;HorizTwoFingerScroll&quot; &quot;on&quot; </span><br><span class="line">Option &quot;CircularScrolling&quot; &quot;on&quot; </span><br><span class="line">Option &quot;CircScrollTrigger&quot; &quot;2&quot; </span><br><span class="line">Option &quot;EmulateTwoFingerMinZ&quot; &quot;40&quot; #精确度 </span><br><span class="line">Option &quot;EmulateTwoFingerMinW&quot; &quot;8&quot; </span><br><span class="line">Option &quot;CoastingSpeed&quot; &quot;20&quot; #触发快速滚动的滚动速度 </span><br><span class="line">Option &quot;PalmDetect&quot; &quot;1&quot; #避免手掌触发触摸板 </span><br><span class="line">Option &quot;PalmMinWidth&quot; &quot;3&quot; #认定为手掌的最小宽度 </span><br><span class="line">Option &quot;PalmMinZ&quot; &quot;200&quot; #认定为手掌的最小压力值 </span><br><span class="line">EndSection</span><br></pre></td></tr></table></figure>
 
 
@@ -349,7 +348,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:15:23" itemprop="dateModified" datetime="2021-06-09T01:15:23+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -400,10 +399,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>首先安装refind-efi，然后直接refind-install</p>
-<p>由于在我的电脑上使用它的脚本只能复制好drivers，所以还要继续： <code>mkdir -p esp/EFI/refind cp /usr/share/refind/refind_x64.efi esp/EFI/refind/</code> 然后创建efi启动项： <code>efibootmgr --create --disk /dev/sdX --part Y --loader /EFI/refind/refind_x64.efi --label &quot;rEFInd Boot Manager&quot; --verbose</code> 其中Y是指哪个分区是EFI分区</p>
+          <p>首先安装refind-efi，然后直接<code>refind-install</code></p>
+<p>由于在我的电脑上使用它的脚本只能复制好drivers，所以还要继续： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p esp/EFI/refind cp /usr/share/refind/refind_x64.efi esp/EFI/refind/</span><br></pre></td></tr></table></figure>
+
+<p>然后创建efi启动项： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">efibootmgr --create --disk /dev/sdX --part Y --loader /EFI/refind/refind_x64.efi --label <span class="string">&quot;rEFInd Boot Manager&quot;</span> --verbose</span><br></pre></td></tr></table></figure>
+
+<p>其中Y是指哪个分区是EFI分区</p>
 <p>由于流氓windows（或者是UEFI的实现问题？）总是会启动到自己身上，所以要进UEFI Shell v2来调整启动顺序</p>
-<p>使用的是Archlinux的安装USB来进Shell，因此fs0:会进到U盘的EFI，我的电脑上EFI分区在/dev/sda1上，所以用fs1:进去，<code>bcfg boot dump</code>看启动顺序，<code>bcfg boot mv ? ?</code>来调整启动顺序。搞定exit之后reboot</p>
+<p>使用的是Archlinux的安装USB来进Shell，因此fs0:会进到U盘的EFI，我的电脑上EFI分区在/dev/sda1上，所以用fs1:进去，<code>bcfg boot dump</code>看启动顺序，<code>bcfg boot mv ??</code>来调整启动顺序。搞定exit之后reboot</p>
 
           <!--noindex-->
             <div class="post-button">
@@ -462,7 +467,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:30:29" itemprop="dateModified" datetime="2021-06-09T01:30:29+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -489,7 +494,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>219</span>
+              <span>296</span>
             </span>
 
 
@@ -513,15 +518,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>cfdisk分区，假设是/dev/sda，sda1是efi，sda2是linux； <code>mkfs.fat -F32 /dev/sda1 mkfs.ext4 /dev/sda2 mount /dev/sda2 /mnt</code></p>
-<span id="more"></span>
-<p>添加清华镜像源： <code>vim /etc/pacman.d/mirrorlist</code> 添加 <code>Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</code></p>
-<p>执行<code>pacman -Sy</code>，之后<code>pacstrap /mnt base base-devel</code>，结束后<code>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</code>。</p>
-<p>chroot进新安装的系统：<code>arch-chroot /mnt echo _hostname_ &gt; /etc/hostname</code>，然后设定/etc/locale.gen，修改后locale-gen，同时 <code>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime hwclock --systohc --utc</code></p>
-<p>修改root密码：passwd；新建用户： <code>useradd -m -G wheel,storage,power -s /bin/bash _username_ passwd _username_</code> 然后添加sudo权限： <code>visudo _username_ ALL=(ALL) ALL</code></p>
-<p>最后处理UEFI的grub： <code>pacman -S grub efibootmgr dosfstools mkdir /boot/EFI mount /dev/sda1 /boot/EFI grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck grub-mkconfig -o /boot/grub/grub.cfg</code></p>
-<p>重启进入arch之后需要执行<code>systemctl enable dhcpcd</code>才能启动时自动获取联网地址</p>
+          <p>先用cfdisk分好区。接下来的步骤里，假设目标磁盘是/dev/sda，sda1是efi，sda2是linux。先格式化分区：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1</span><br><span class="line">mkfs.ext4 /dev/sda2</span><br></pre></td></tr></table></figure>
 
+<p>挂载分区：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda2 /mnt</span><br><span class="line">mkdir /boot/EFI</span><br><span class="line">mount /dev/sda1 /boot/EFI</span><br></pre></td></tr></table></figure>
+
+<p>添加清华镜像源： <code>vim /etc/pacman.d/mirrorlist</code> 添加 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</span><br></pre></td></tr></table></figure>
+
+<p>bootstrap安装主要的系统文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -Sy</span><br><span class="line">pacstrap /mnt base base-devel</span><br></pre></td></tr></table></figure>
+
+<p>生成fstab（挂载文件）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/3bb30ce0/#more" rel="contents">
@@ -579,7 +589,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:10:55" itemprop="dateModified" datetime="2021-06-09T01:10:55+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -630,7 +640,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>断子绝孙法，在/etc/modprobe.d/blacklist.conf中添加blacklist pcspkr，直接把声卡驱动模块屏蔽</p>
+          <p>断子绝孙法，在<code>/etc/modprobe.d/blacklist.conf</code>中添加<code>blacklist pcspkr</code>，直接把声卡驱动模块屏蔽</p>
 
           <!--noindex-->
             <div class="post-button">
@@ -689,7 +699,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:11:07" itemprop="dateModified" datetime="2021-06-09T01:11:07+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -742,9 +752,9 @@
       
           <p><code>pacman -S bbswitch bumblebee</code></p>
 <span id="more"></span>
-<p>创建/etc/modprobe.d/bbswitch.conf： <code>options bbswitch load_state=0 unload_state=1</code></p>
-<p>创建/etc/modprobe.d/blacklist： <code>blacklist nouveau</code></p>
-<p>创建/etc/modules-load.d/bbswitch.conf： <code>bbswitch</code></p>
+<p>创建<code>/etc/modprobe.d/bbswitch.conf</code>： <code>options bbswitch load_state=0 unload_state=1</code></p>
+<p>创建<code>/etc/modprobe.d/blacklist</code>： <code>blacklist nouveau</code></p>
+<p>创建<code>/etc/modules-load.d/bbswitch.conf</code>： <code>bbswitch</code></p>
 <p><a target="_blank" rel="noopener" href="https://xuchen.wang/archives/archbbswitch.html">YaCHEN’s Blog:Arch下使用bbswitch彻底禁用双显卡笔记本的独立显卡</a></p>
 
           <!--noindex-->
@@ -804,7 +814,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:14:15" itemprop="dateModified" datetime="2021-06-09T01:14:15+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -857,7 +867,8 @@
       
           <p>暂时不能明白到底是哪个包非常重要，但是目前使用networkmanager slim network-manager-applet使得连接稳定了下来</p>
 <p>注意NetworkManager需要设定好/etc/hostname和/etc/hosts：</p>
-<p><code>127.0.0.1 localhost 127.0.1.1 _myhostname_.localdomain_myhostname_</code> <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GNOME">NetworkManager</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 localhost</span><br><span class="line">127.0.1.1 _myhostname_.localdomain _myhostname_</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GNOME">NetworkManager</a></p>
 
           <!--noindex-->
             <div class="post-button">
@@ -916,7 +927,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:11:18" itemprop="dateModified" datetime="2021-06-09T01:11:18+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -967,7 +978,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>首先要<code>vim /etc/locale.gen</code>取消注释zh_CN.UTF8 UTF8，然后locale-gen</p>
+          <p>首先要<code>vim /etc/locale.gen</code>取消注释<code>zh_CN.UTF8 UTF8</code>，然后<code>locale-gen</code></p>
 <p>然后还要安装fcitx-im来支持各种程序调用fcitx</p>
 
           <!--noindex-->
@@ -1027,7 +1038,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:12:44" itemprop="dateModified" datetime="2021-06-09T01:12:44+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1054,7 +1065,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>33</span>
+              <span>34</span>
             </span>
 
 
@@ -1078,10 +1089,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>先安装argyllcms，然后</p>
-<p><code>dispwin -I _icc路径_</code> <a target="_blank" rel="noopener" href="https://www.reddit.com/r/archlinux/comments/3opl7e/colormgr_getdevices_no_output/">colormgr get-devices no output ?-reddit</a></p>
-<span id="more"></span>
-<p>icc和icm是一样的，改一下文件名是通用的。</p>
+          <p>先安装argyllcms，然后<code>dispwin -I _icc路径_</code></p>
+<p><a target="_blank" rel="noopener" href="https://www.reddit.com/r/archlinux/comments/3opl7e/colormgr_getdevices_no_output/">colormgr get-devices no output ?-reddit</a></p>
+<p>!!! info “”<br>    icc和icm是一样的，改一下文件名是通用的。</p>
 
           <!--noindex-->
             <div class="post-button">
@@ -1140,7 +1150,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:11:29" itemprop="dateModified" datetime="2021-06-09T01:11:29+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1194,7 +1204,7 @@
           <p>先添加源，在/etc/pacman.conf里添加：  </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]  </span><br><span class="line">SigLevel = Never  </span><br><span class="line">Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
 
-<p>然后pacman -Syy更新源缓存。  </p>
+<p>然后<code>pacman -Syy</code>更新源缓存。  </p>
 <p>如果有yay，直接<code>yay -S deepin-wine-wechat deepin-wine</code>，安装完再修改<code>/opt/deepinwine/apps/Deepin-WeChat/run.sh</code>，把<code>WINE_CMD</code>修改成<code>deepin-wine</code>。就可以了。  </p>
 <p>没有装yay，去AUR下载<a target="_blank" rel="noopener" href="https://aur.archlinux.org/cgit/aur.git/snapshot/deepin-wine-wechat.tar.gz">deepin-wine-wechat</a>、<a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages/deepin-wine/">deepin-wine</a>，解压再<code>makepkg -rsi</code>就行。</p>
 
@@ -1403,7 +1413,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">181</span>
+        <span class="site-state-item-count">183</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

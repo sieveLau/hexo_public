@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:30:55" itemprop="dateModified" datetime="2021-06-09T01:30:55+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,8 @@
 
       
           <p>archlinux下安装了AUR里的deepin-wechat之后，需要修改/opt/deepinwine/tools/run.sh，添加</p>
-<p><code>export XMODIFIERS=&quot;@im=fcitx&quot; export GTK_IM_MODULE=&quot;fcitx&quot; export QT_IM_MODULE=&quot;fcitx&quot;</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> XMODIFIERS=<span class="string">&quot;@im=fcitx&quot;</span></span><br><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=<span class="string">&quot;fcitx&quot;</span></span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=<span class="string">&quot;fcitx&quot;</span></span><br></pre></td></tr></table></figure>
+
 
           <!--noindex-->
             <div class="post-button">
@@ -558,7 +559,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 02:47:48" itemprop="dateModified" datetime="2021-06-09T02:47:48+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -581,7 +582,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>55</span>
+              <span>54</span>
             </span>
 
 
@@ -606,19 +607,17 @@
 
       
           <p>添加更新的PPA：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:jtaylor/keepass</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:jtaylor/keepass</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 
 <p>安装之后让它显示中文：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /usr/bin/keepass2</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /usr/bin/keepass2</span><br></pre></td></tr></table></figure>
 
 <p>添加：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LANG=zh_CN.UTF8</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LANG=zh_CN.UTF8</span><br></pre></td></tr></table></figure>
 
 <p>下载RPC：<a target="_blank" rel="noopener" href="https://github.com/kee-org/keepassrpc/releases">https://github.com/kee-org/keepassrpc/releases</a></p>
-<p>复制到</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/keepass2</span><br></pre></td></tr></table></figure>
+<p>复制到<code>/usr/lib/keepass2</code>，完事。</p>
 
-<p>完事。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/267b8c6b/#more" rel="contents">
@@ -1398,7 +1397,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">181</span>
+        <span class="site-state-item-count">183</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

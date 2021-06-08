@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="cfdisk分区，假设是&#x2F;dev&#x2F;sda，sda1是efi，sda2是linux； mkfs.fat -F32 &#x2F;dev&#x2F;sda1 mkfs.ext4 &#x2F;dev&#x2F;sda2 mount &#x2F;dev&#x2F;sda2 &#x2F;mnt  添加清华镜像源： vim &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 添加 Server &#x3D; https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;archl">
+  <meta name="description" content="先用cfdisk分好区。接下来的步骤里，假设目标磁盘是&#x2F;dev&#x2F;sda，sda1是efi，sda2是linux。先格式化分区： 12mkfs.fat -F32 &#x2F;dev&#x2F;sda1mkfs.ext4 &#x2F;dev&#x2F;sda2  挂载分区： 123mount &#x2F;dev&#x2F;sda2 &#x2F;mntmkdir &#x2F;boot&#x2F;EFImount &#x2F;dev&#x2F;sda1 &#x2F;boot&#x2F;EFI  添加清华镜像源： vim &#x2F;etc&#x2F;p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="archlinux在UEFI下的安装">
 <meta property="og:url" content="https://blog.huaj.tk/posts/3bb30ce0/index.html">
 <meta property="og:site_name" content="Nugo">
-<meta property="og:description" content="cfdisk分区，假设是&#x2F;dev&#x2F;sda，sda1是efi，sda2是linux； mkfs.fat -F32 &#x2F;dev&#x2F;sda1 mkfs.ext4 &#x2F;dev&#x2F;sda2 mount &#x2F;dev&#x2F;sda2 &#x2F;mnt  添加清华镜像源： vim &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 添加 Server &#x3D; https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;archl">
+<meta property="og:description" content="先用cfdisk分好区。接下来的步骤里，假设目标磁盘是&#x2F;dev&#x2F;sda，sda1是efi，sda2是linux。先格式化分区： 12mkfs.fat -F32 &#x2F;dev&#x2F;sda1mkfs.ext4 &#x2F;dev&#x2F;sda2  挂载分区： 123mount &#x2F;dev&#x2F;sda2 &#x2F;mntmkdir &#x2F;boot&#x2F;EFImount &#x2F;dev&#x2F;sda1 &#x2F;boot&#x2F;EFI  添加清华镜像源： vim &#x2F;etc&#x2F;p">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-02-03T16:13:53.000Z">
-<meta property="article:modified_time" content="2021-06-08T07:07:46.407Z">
+<meta property="article:modified_time" content="2021-06-08T17:30:29.317Z">
 <meta property="article:author" content="Sieve Lau">
 <meta property="article:tag" content="archlinux">
 <meta name="twitter:card" content="summary">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:30:29" itemprop="dateModified" datetime="2021-06-09T01:30:29+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,7 +261,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>219</span>
+              <span>296</span>
             </span>
 
 
@@ -285,14 +285,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>cfdisk分区，假设是/dev/sda，sda1是efi，sda2是linux； <code>mkfs.fat -F32 /dev/sda1 mkfs.ext4 /dev/sda2 mount /dev/sda2 /mnt</code></p>
-<span id="more"></span>
-<p>添加清华镜像源： <code>vim /etc/pacman.d/mirrorlist</code> 添加 <code>Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</code></p>
-<p>执行<code>pacman -Sy</code>，之后<code>pacstrap /mnt base base-devel</code>，结束后<code>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</code>。</p>
-<p>chroot进新安装的系统：<code>arch-chroot /mnt echo _hostname_ &gt; /etc/hostname</code>，然后设定/etc/locale.gen，修改后locale-gen，同时 <code>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime hwclock --systohc --utc</code></p>
-<p>修改root密码：passwd；新建用户： <code>useradd -m -G wheel,storage,power -s /bin/bash _username_ passwd _username_</code> 然后添加sudo权限： <code>visudo _username_ ALL=(ALL) ALL</code></p>
-<p>最后处理UEFI的grub： <code>pacman -S grub efibootmgr dosfstools mkdir /boot/EFI mount /dev/sda1 /boot/EFI grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck grub-mkconfig -o /boot/grub/grub.cfg</code></p>
-<p>重启进入arch之后需要执行<code>systemctl enable dhcpcd</code>才能启动时自动获取联网地址</p>
+        <p>先用cfdisk分好区。接下来的步骤里，假设目标磁盘是/dev/sda，sda1是efi，sda2是linux。先格式化分区：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/sda1</span><br><span class="line">mkfs.ext4 /dev/sda2</span><br></pre></td></tr></table></figure>
+
+<p>挂载分区：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda2 /mnt</span><br><span class="line">mkdir /boot/EFI</span><br><span class="line">mount /dev/sda1 /boot/EFI</span><br></pre></td></tr></table></figure>
+
+<p>添加清华镜像源： <code>vim /etc/pacman.d/mirrorlist</code> 添加 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</span><br></pre></td></tr></table></figure>
+
+<p>bootstrap安装主要的系统文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -Sy</span><br><span class="line">pacstrap /mnt base base-devel</span><br></pre></td></tr></table></figure>
+
+<p>生成fstab（挂载文件）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+
+<p>chroot进新安装的系统：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+
+<p>设定主机名字，记得替换成自己想要的名字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo _hostname_ &gt; /etc/hostname</span><br></pre></td></tr></table></figure>
+
+<p>然后设定locale相关的东西，首先修改/etc/locale.gen，然后locale-gen。然后写入locale.conf： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> LANG=en_US.UTF-8 &gt; /etc/locale.conf</span><br></pre></td></tr></table></figure>
+<p>设定时区，执行时间同步：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">hwclock --systohc --utc</span><br></pre></td></tr></table></figure>
+
+<p>修改密码、新建用户：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">passwd <span class="comment">#修改root密码</span></span><br><span class="line">useradd -m -U _username_ passwd _username_ <span class="comment">#新建用户</span></span><br></pre></td></tr></table></figure>
+
+<p>最后处理UEFI的grub。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr dosfstools <span class="comment">#引导器、efi工具、识别windows需要的dosfstools</span></span><br><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=GRUB</span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg <span class="comment">#生成grub配置</span></span><br></pre></td></tr></table></figure>
+
+<p>重启进入arch之后需要执行<code>systemctl enable dhcpcd</code>才能启动时自动获取联网地址。</p>
 
     </div>
 
@@ -421,7 +446,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">181</span>
+        <span class="site-state-item-count">183</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="只需要一条命令就可以了： while inotifywait -r -e modify,create,delete &#x2F;源目录; do    rsync -avz &#x2F;源目录 &#x2F;目标目录done">
+  <meta name="description" content="只需要一条命令就可以了： 123while inotifywait -r -e modify,create,delete &#x2F;源目录; do    rsync -avz &#x2F;源目录 &#x2F;目标目录done">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用inotifywait和rsync同步文件夹">
 <meta property="og:url" content="https://blog.huaj.tk/posts/ca9faae9/index.html">
 <meta property="og:site_name" content="Nugo">
-<meta property="og:description" content="只需要一条命令就可以了： while inotifywait -r -e modify,create,delete &#x2F;源目录; do    rsync -avz &#x2F;源目录 &#x2F;目标目录done">
+<meta property="og:description" content="只需要一条命令就可以了： 123while inotifywait -r -e modify,create,delete &#x2F;源目录; do    rsync -avz &#x2F;源目录 &#x2F;目标目录done">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-09-26T11:13:50.000Z">
-<meta property="article:modified_time" content="2021-06-08T07:07:46.675Z">
+<meta property="article:modified_time" content="2021-06-08T17:31:48.989Z">
 <meta property="article:author" content="Sieve Lau">
 <meta name="twitter:card" content="summary">
 
@@ -233,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-09 01:31:48" itemprop="dateModified" datetime="2021-06-09T01:31:48+08:00">2021-06-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,8 @@
 
       
         <p>只需要一条命令就可以了：</p>
-<p>while inotifywait -r -e modify,create,delete /源目录; do<br>    rsync -avz /源目录 /目标目录<br>done</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> inotifywait -r -e modify,create,delete /源目录; <span class="keyword">do</span></span><br><span class="line">    rsync -avz /源目录 /目标目录</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -407,7 +408,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">181</span>
+        <span class="site-state-item-count">183</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
