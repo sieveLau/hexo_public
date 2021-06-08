@@ -238,6 +238,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>411</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -252,6 +276,10 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> MATHLIBRARY_EXPORTS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MATHLIBRARY_API __declspec(dllexport)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MATHLIBRARY_API __declspec(dllimport)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 
 <p>第一行的<code>MATHLIBRARY_EXPORTS</code>要特别注意，如果自己的示范库不是叫MathLibrary，比如叫DemoDLL，那么就应该改成<code>DEMODLL_EXPORTS</code>。具体是什么EXPORT，可以看项目属性（Alt+Enter）的<code>C/C++</code>-<code>预处理器</code>的<code>预处理器定义</code>里面的值。</p>
+<p>否则就会在编译时报错<code>C4273</code>（inconsistent DLL linkage）,因为编译器会当成是dll import。</p>
+<p>第二个是client app，直接右键引用，把dll那个项目给引进，就可以了。</p>
+<p>完整的例子在<a target="_blank" rel="noopener" href="https://mirgit.huaj.tk/sfadsewqwrqv/WindowsDLLDemo">WindowsDLLDemo</a>。</p>
+<h2 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h2><p>相比sln，cmake定义<code>ifdef</code>就自由得多，只要跟<code>CMakeLists.txt</code>里面<code>target_compile_definitions</code>的一致即可。例如<code>CMakeLists.txt</code>是这样：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/547dc98a/#more" rel="contents">
@@ -327,6 +355,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>361</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -339,7 +391,13 @@
           <p>今天升级到Windows 20H2，据说wsl2比较牛逼，就试试。但是发现它虽然是基于Hyper-V的类似虚拟机的环境，但是依然不支持systemd。查了一下，发现要用骚操作来实现systemd托管服务的功能。</p>
 <p>主要依靠<a target="_blank" rel="noopener" href="https://github.com/arkane-systems/genie/tree/v1.40">arkane-systems /<br>genie</a>来“伪造”一个存在systemd的环境，进入这个环境需要用<code>genie -c bash</code>或者<code>genie -c command</code>来执行需要systemd的命令。与此同时，正常使用wsl没有问题，互不干扰。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在<a target="_blank" rel="noopener" href="https://github.com/arkane-systems/genie/releases/tag/v1.40">Release</a>里下载deb包，放到wsl里安装。随后退出wsl，在windows的命令行下运行<code>wsl --shutdown</code>来关掉它，再运行<code>wsl</code>来实现重启的效果。</p>
-<h2 id="首次配置"><a href="#首次配置" class="headerlink" title="首次配置"></a>首次配置</h2>
+<h2 id="首次配置"><a href="#首次配置" class="headerlink" title="首次配置"></a>首次配置</h2><p>由于始终不是一个完整的普通Linux，所以systemd-genie也有<a target="_blank" rel="noopener" href="https://github.com/arkane-systems/genie/wiki/Systemd-units-known-to-be-problematic-under-WSL">不支持的服务</a>。在重启了wsl之后，执行以下命令来mask掉不支持的服务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo genie -c systemctl mask auditd</span><br><span class="line">sudo genie -c systemctl mask multipathd</span><br><span class="line">sudo genie -c systemctl mask systemd-modules-load</span><br></pre></td></tr></table></figure>
+
+<p>以及编辑/etc/fstab，把根分区的那一行注释掉。执行<code>findmnt /</code>可以确定根分区是/dev/多少，再注释/etc/fstab。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ findmnt /</span><br><span class="line">TARGET SOURCE   FSTYPE OPTIONS</span><br><span class="line">/      /dev/sdb ext4   rw,relatime,discard,errors=remount-ro,data=ordered</span><br></pre></td></tr></table></figure>
+
+<p>搞定之后再“重启”一次wsl，就好了。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/14582612/#more" rel="contents">
@@ -411,6 +469,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>193</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -426,6 +508,13 @@
 <p>自然是要去找怎么压缩日志文件的空间。<del>当然，最简单的办法就是清空/var/log/journal目录</del></p>
 <p>查了一下，<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1012912/systemd-logs-journalctl-are-too-large-and-slow">askubuntu</a>论坛上有解决方法。</p>
 <p>单次清理日志，清理到只剩200M的话，用这个命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">➜  journalctl --vacuum-size=200M</span><br></pre></td></tr></table></figure>
+
+<p>如果是想让系统自动控制大小，就要改<code>/etc/systemd/journald.conf</code>了。当然，按照传统，应该在<code>/etc/systemd/journald.conf.d/</code>里新建一个配置文件，填以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SystemMaxUse=200M</span><br></pre></td></tr></table></figure>
+
+<p>还有其他参数可以设置，参考<a target="_blank" rel="noopener" href="https://manpages.debian.org/testing/systemd/journald.conf.d.5.en.html">journald.conf.d(5)</a>。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/96685388/#more" rel="contents">
@@ -501,6 +590,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>138</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -516,6 +629,12 @@
 
 <p>在我的电脑上这个命令输出如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">用于“inode/directory”的默认应用程序：pcmanfm.desktop</span><br><span class="line">已注册的应用程序：</span><br><span class="line">	code.desktop</span><br><span class="line">	pcmanfm.desktop</span><br><span class="line">	org.gnome.Nautilus.desktop</span><br><span class="line">	org.gnome.baobab.desktop</span><br><span class="line">推荐的应用程序：</span><br><span class="line">	code.desktop</span><br><span class="line">	pcmanfm.desktop</span><br><span class="line">	org.gnome.Nautilus.desktop</span><br><span class="line">	org.gnome.baobab.desktop</span><br></pre></td></tr></table></figure>
+
+<p>如果要修改成别的，比如改成code，那就执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gio mime inode/directory code.desktop</span><br></pre></td></tr></table></figure>
+
+<p>不需要像原文一样–query和–set。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/d44a86c5/#more" rel="contents">
@@ -587,6 +706,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>9</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -596,7 +739,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          有东西被加密了, 请输入密码查看.
+          <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="b91d457f9de04cb9d5e324b67ddb8dc13e5a1f2361cd20670fa7b6dc5e1057c2">7c0a83fe2b8c6d15df4dacf507370bde3c1fbf704667ea3937b03aea1429eef05584b8c3cb64fa9c13d86065e4434a1ac91af5e0cb02ffdd11347baf5117be8da8956c7330d7edc042ef1e31a389d732e93ab3325db339fd3856fa79da4c123133f098432a70130eaeeefb29136cf65a69dae9a1dae41a2207c29415dbcc8b1de83c69605e4b886134cea81797dc1a88b7ac8164da32b51d9a6381afea754393261a8a5c97cc0c0ca799bd19544d0aefb8b9805e682a0388aac34192a9fc7964b8778b97eeaed8cae10828fce265e69c54ce536167661bf1d8f6c5d69231b103dce935af9f20f8d5abf0f4c14ec1ed412c4877d5983d9cce7275f16b648263cee192543633726473923b5b64d3642a5165fdde43c692e3d494dfa8deb94542fb7dcead32bc63b226caf3478a73bdce69d72b13d7d2d9edde4a8b22c2e088f981d52d41a87168d552c8939cbb6ea5efd96527b12d949998b122b4237a712ca996013f914c96bd87ed0ddf37101836c54bdae9cd03116e9685a828063f3d5fea387c86cee423275f79a462b02e4e527399764a08485e99c53d6240a6601720abeefbd2d77ddc27dba74b97f66a6adee5d54df205a7cc3126f1b6fe6c37561eea680486b367ed84ab207c36cc7b8a0900994783620821d8023c81071978e2f9236838e162e2397216c50f8526b34b3351e3f9233a91ebd989f0381d974ca82b285810eb16ee37025555f50efcd924d173f6e68611767ebb2505f18f71dcc53a1992ea11709a888635a065189d930ae33807fe0f61c825096c1179ffa8ddb7ba7c3bbe7decf34779aa15e342f1237660b9c8bec6f6ca4aa44f7e917a496bfd522ae9ab8a69367f9a4b9236f028df5165dd29369caa28b4a5f26612a0eec5a3680cad44b9ba784fea382a8a170194d0dc2b55e54213c8d1a954c3558e5db88f45b95ce7f3ce26e216b8222f947253619ca8b0fb409f8e10a53ed9829e951847e3833b68023855eaf6f60eaaa66ba09fb5b8fec1108bc496ec4c7c1a83fb9c3b03b8e68a336399a9d522b1295bbf2a3d37b0a900d7457924cc3ef51a5b45e740afaa0d8ccb19ed7c045e7de9ad37e6b7b13a751d360cc67134a7578876ef27794b2b957c876cff5f8fd1bfa57bcb6ab3a42b8e247b4b3e289292998f85a7c3cdd125b4aa3272140b7de6e2844791c8e60338af24084a6f41a24e4801830246e072f4af82c8e81f425a373621cb6a846adcc511c399546ea7e27f361b3262dcaaaaf6259fdda77525a8d13da7af598524fb9a482ee47b79e5a106cf4afea60402535c159d0b55baffaf1c5a24200604bad0c4481599848aba057fe683a6039ecd717cef7adbad48d0a7c8cc299547c13345ddc7a02686d58fd311540e08a30187b544f6ef7502ae7fc7f413e45cba559981dd003a7cce6beec9ee4014dcf07933b3fd85c8681e365df8b7036e32f1e7758fddad903ec4f1308dcb87be5df44fc770ee65ca52ae30704acff9bf9d5635156d44a772d324105c57cf8c8d70556850da4bf346383bf8b36406c395284db510d9cb655dcc896fb2f637650ad535ea5b575da61b8bffed726a8c8e60f45286de5a0140da7fa691a87444de9ac7e911bf85ca81c320862026823f08e9d859cbdb37ca7dcfb03555fcf29287c02a4e95d653bf9804307ee82a43afd24ba25277211c21c35ffcbc906f1544c0be15dd3c11bff923530fad3d669ed4f6f46335e3e6ce542102c8a457d453220b0c0ef160af013d9d98d5704afa032a1219c35111cb67333ff33d413b28f3765e969721cba3d126b9aed055952ca3f91c6bd6b6f58e955e8da89a45116b3d974f68cc4d4505b3eb80fa2ae66b5cf24074ce6745cb19da05f3e4bfd67dd3f6e476b7d85188437b159ef89a2ea5bbf180deabdd96bac156e0ca71ee79caeb675d874265b6516d1cf2e3e07176b9123a3868f609e424f5b7054aa2b4ff5a6ae2d7de993789a6cb70dd632f87d898eade1cb6baad79ff41ec26415b560d579c9e16e621b7842ff6ed12a41d76cb87bcf961ead516da7af0cd56d07a9d6a1f989973842abf853b04e127d60932da05c77ee1ff831b2fc229a642817b81166e6f0c9b6265aa4a1d8e1ea0cc792210ae01c828990b807100dff0d045e43a9a9505b98a9890ce0da180d63cbc4f86c7d2813fdb3b199b0b78804e2e5e1ac3981f5f48f36844c33332c1bd9910d6fb83e48d42d3163f43ed5a0afb92652badf3773f4db916cc98eac555f750c114eabd5b68b60a4471412027ff67c545cb152947df87739cbb46bf715fa9286950eef0da93ddd3542f1874b489964d25a25dd5c25ddb93c44a80210913b1a90cbd25bf42f7841660cd065e66f4a0ebe10a9438bf65193dd5ddd111eb877a8f4f9a0802cc0b9e0c44e0e36a76e3463a7e9494abba3d53afc01fda04bf79ca3d492aef4d735b54fa10626a37df137a0022f27fa608486a9124b5c5e70620fd2e41c1144640b6b7dec2aa8b6b3145b6da0eb03ff5abe9bad20fabea276d394c60ccc5b977b4a9c95120014f5fc3e70a703856047c39e2ee76466dcdacddd6b25bbbd867da3413fe1a61cdf9508b91569ca3e9f0773abef292b658a2075c67a7ea8c84a30065fd2c6bddc7d875307a24e73fab3aecab76318ab7fa7f4dcb5a036cecfd45f5d15b2dee19f94dede07a2325f9552366bac8b29c02285fe66481e8adf5bf48fc9a5070f131d4e71776a59ce24a04ca0263e5649cf034544c56b2119a03920050b0397aeeb86192f77f254c65bfb85d93d0196c444be21679c26d15ac8ba3d021ba43ab86bee618009f042484a8601d2ac5688cba5ba9bf85b2dc8c17a2b60bfbcd9ea9e6650e25753ebf5bd404ef598a81ec93f4f10a1c8b369dddbf37381d14d3efdd89bd4c836a0cb965bf144ddd2ae376904abc7be2801fc8a15f4a8f45d3df1004a7b420dd72cae7201edcc5f8d38915a9066b41018ad5a61b070e0a81bb0810d6cef2502b842bafbd38f03819bf3724f5775fc3326016994c8d458c2857da52654cff444277430fb2699321662db18c1142f6e2a7ee5626abbe8c9435a47624d8fd052757bd5510f0808de260547d464e6e204031582956edea2ce59aea106d6b54ebed927404653ae7c19deea743b2b3f6ac1f7534f1d679910c8e36d56946527963c41b41586b9a81e56d0f641a30353ce1a73a7256b89d8fef1b3b6ed9355b8fc397b264905c1ff52c0d8575349f9a2d88e66287a4dc03843887550ebd65881a924578cbadda0e2b155030bc56b4ecda4ea1303d1338baf87ad5539e88c053b6bde4930f6c62214519fbc0c17f8061812c05db0628f73be80d7d8a34a960f1083f5553dcff38c5417be054797da8aec838b0d9ab0cfb7a4d96efe02b58b5b546c398a7e187dd0a659f1ea40bc6853a464c9e1e24132a977503f6837ea7ed708d4840ca111fa6f63cb59d5930972b47e2386adcd03cd931a66468314a3bdfa7f8e811cccce3fac8e8c428c7c8d3de2c257ab90e0252d3c696a15901d00862ce3ee7dfeca3b44d2bd6ccc55177cdc75ad62034aa99abc8c3c7b3db37d9b4ed8e7c5cffc10d26f9f11acf5bc2dced795391ef75bb9a72c993038c9b8faa52a0beabf7895902f49aa031d297ea1b4a9d43c04d10e992b13faaf331a7ed87ae5964bd32fa20b97fc96e43145654c5d18b05ff9bc8e927fb857cfcd43b4153a1673d69dcda56cbb15e620d1c9d66043fafbe0b92bb9d3c8ce5ce352fed25d96335241793f6946cbcfaeaf1e17889893839c05c0a541310852dd0e6334d84005f6699c5dd88beef64a9978293cfa1d6f76ba98d8a8edb9ad363bb233594986c6745ae4454e4ab36ab3812d9101b363966854494ed8fd784c73c69c9ca161ba4c3da3b1e4a0a2a0630ddf41b5ef7ad8e86c3f918ed5194e35c42567d4565869db9c2cf42fb384df47a61b6c701ec5c00102c00d23f7fa7318905a653a23791ec2386e81dfd753bdcf23cb63622096e79e4402e4452ae336a2413e2d8049302bb3a9cf787d81492440ded6e3bf66743c1d4b518f0cec55a21ddf5659c2021d4e33a2d5ba687c9a374ad2fe68295d60747c8ba1a5fbe1ccd0873ef6cdb2ec783e66da9373fdfeee68a2de635cd1fd048684e6f2d37d0658988a2f36be7c8f302c7eb8dff34b62d3f306a508c4809b84abe78ce075e50904457cf7f82e108e9b02c90423233a1a8248df4f4555fbec49b8c09c06edc6bd368d8f7c92ac61b2bbc999533dbf25eb64fc1368404943fb8d57e074653dc387fe5e5323615bb56b78c99de46b974d8507667d2d3e50778e5b80c0dce001b77a0a07970b2a307b9ec7a7d46668242bc24a3bb4c275a193a3fcefa5dc103259f3de0c0bc2c1521aa10bce7fbb1465c2569a5c2ff7be8da62f7974a9c81ded625aa103fd2078e1c62f79dd00024d8033982c15004052f7b813e503c5d831616fcdc428ddccd75192f1bac25dfc5ad54207d41dafe73834d7731ddae98b2e80dffb5782a843c7496ffaf8762e95f8f680cf536b501725ce94fd4e23407dcdda4f812a6d1c0fff88aef5f6ac6ba7c5992ebae1ddb845de884de3daa68195a066ba060aec27425b6541a53da14f53664465afddc343f1d6f86fbd74e7b8eecd2e0c5cb5d3123ea3bc0d364aceab58194f3c652bc444e13484e1f4f216f4f7daff6ca16ac1a80285f613e38ecaf3de71f9ff3709f2b7b2526007270a31274c68a8fe1e29d2ca5c5ae4d473ca16e0b6e0598e113b5f842933f7d1c4abe07217e037b686d3dbad2310d495f06037de91def0f465303fc0e3e4ee70421b66df8b365fa965fe9e8b0752354b4213ef2641edc26f46eb941676d3f9d183019a5832697cf93ce722a02f6f8e0e99ea98738d57abb9bc3991faf64da154765f894c97b1dce68d983e8ad3c0359f8f7cf8e8a4f75e7f21cdd84882f0c6244dbce7e705662e55bf3ed89ef56ac1b3a14cc2ff1283a118ccfa99857fc94aab91d0f239d5185246402e5fed631a964d79b88bfa7c92fd7a764d88e10d4f7dfe7e512c4ade086c44d41ec1cf982a956384403452108faabbe9e41a0368b675f3d5357b3d2f7d805815350e932d93fad1c517260f2b068982dc61aa351f545abd0f8a79dbcf49decc1331e96dfce98a6637f868b7a00daa75fbdb2a5106b0d327a38c7537ba57963f28f073baf2d782ae6e6b1681cb282d901445a7530206df8621dae78a48bbd2a2f62f905f5e7b47960</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/fd7aa5a6/#more" rel="contents">
@@ -672,6 +826,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>179</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -687,6 +865,8 @@
 <p>显示在桌面上的快捷方式的名字是由Name决定的，跟.desktop文件的名字没有关系。</p>
 <p><del>所以写一个Name是Intel但是文件名是AMD的.desktop也不是不可以</del></p>
 <p><em>实际上这跟hugo的特点是一样的，hugo也是文件名跟实际标题可以完全不一样</em></p>
+<p><em>hugo居然拒绝渲染.开头的文件，真是无语了</em></p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/cea006d1/#more" rel="contents">
@@ -757,6 +937,30 @@
             </span>
 
           
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>0</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
 
         </div>
       </header>
@@ -831,6 +1035,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>398</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -845,6 +1073,8 @@
 <p>点上香烛之后，突然开始下雨，就跟爷爷去世那天一样的大雨。不得不说有一种奇怪的感觉。撑了伞挡雨，等烧完之后，我和爸爸一起去办事大厅交钱先做个牌位。大家都很不满，觉得要去西樵的墓园买个墓地，一方面好让奶奶也来拜，另一方面也不用受这鸟气。</p>
 <p><em>听说要十几万一个，确实挺贵的</em></p>
 <p>下午吃完饭，再去旧屋烧纸钱。虽然不给在火葬场烧，但是仪式还是要的。今天大风，烧起来烟不大；但是因为以前没遇到风这种情况，所以我挑起还没烧完的灰想让它们接触空气继续烧的时候搞到到处都是，被骂了一顿。姑妈和姑丈给旧屋打扫了一下，但是后边也不会经常有人来，可能下次来又会满了灰尘。</p>
+<p>很累，回到家之后睡了一个半钟，超沉，就像模拟人生里的一个描述：睡得跟死人一样（形容吸血鬼睡了个好觉的心情）。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/776d29ef/#more" rel="contents">
@@ -916,6 +1146,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>170</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -931,6 +1185,7 @@
 
 <p>用7减去fmask和dmask的值就是chmod中的权限值，r=4，w=2，x=1。</p>
 <p>可以写一个systemd unit file来在开机时设定好权限：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=fix share folder permission</span><br><span class="line">After=network.target</span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot</span><br><span class="line">ExecStart=/usr/bin/mount -t vboxsf -o fmask=133,dmask=022,uid=你的用户的uid nugo /mnt/nugo</span><br><span class="line"># disable timeout logic</span><br><span class="line">TimeoutSec=0</span><br><span class="line">#StandardOutput=tty</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/1931c7f6/#more" rel="contents">
@@ -1002,6 +1257,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>230</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -1017,6 +1296,11 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/mathjax/MathJax.git mj-tmp</span><br><span class="line">mv mj-tmp/es5 &lt;hugo的static目录&gt;/mathjax</span><br><span class="line">rm -rf mj-tmp</span><br></pre></td></tr></table></figure>
 
 <p>随后，在主题提供的header-addtion或者类似的提供往html的header里添加代码的文件里添加script。比如对于官方推荐的ananke主题，这个添加header的文件是themes/ananke/layouts/partials/head-additions.html。往该文件中添加：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">&quot;MathJax-script&quot;</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;/mathjax/tex-chtml.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>即可让博客实现显示公式的功能。</p>
+<p>$$<br>1+1=2<br>$$</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/7078fec4/#more" rel="contents">

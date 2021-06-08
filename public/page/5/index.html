@@ -238,6 +238,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>50</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -247,7 +271,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          std::move虽然名字是move，但是做的只是static_cast<T&&>，即将左值变成右值。真正做出移动操作的是移动构造器和移动赋值操作符。
+          <p>std::move虽然名字是move，但是做的只是static_cast&lt;T&amp;&amp;&gt;，即将左值变成右值。真正做出移动操作的是移动构造器和移动赋值操作符。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2a0623d2/#more" rel="contents">
@@ -323,6 +348,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>182</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -332,11 +381,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在Visual Studio中用Qt的东西非常多坑。
+          <p>在Visual Studio中用Qt的东西非常多坑。</p>
+<p>1. 把项目放到Git上再clone回来，直接build就会报错。Qt的VS Tool像个弱智一样不会重新补回需要的信息。首先用Qt要在项目配置中加include和附加库目录。第二是需要把文件中的#include改成完整路径，比如<qstring>要改成&lt;QtCore/QString&gt;。这样就不会出现Git的问题了。</qstring></p>
+<p>2. 非成员函数也要通过“添加-Add Qt Class”来添加一对.h和.cpp，然后再把class代码删掉，再写非成员函数。不然自己新建.h和.cpp就会在build的时候报错，找不到Qt的文件。（这么弱智的东西是谁搞出来的）</p>
 
-1. 把项目放到Git上再clone回来，直接build就会报错。Qt的VS Tool像个弱智一样不会重新补回需要的信息。首先用Qt要在项目配置中加include和附加库目录。第二是需要把文件中的#include改成完整路径，比如要改成<QtCore/QString>。这样就不会出现Git的问题了。
-
-2. 非成员函数也要通过“添加-Add Qt Class”来添加一对.h和.cpp，然后再把class代码删掉，再写非成员函数。不然自己新建.h和.cpp就会在build的时候报错，找不到Qt的文件。（这么弱智的东西是谁搞出来的）
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/b3a7d44b/#more" rel="contents">
@@ -408,6 +456,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>22</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -417,7 +489,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在linux上，对当前shell设置环境变量是用export。windows对应的是set或者setlocal。
+          <p>在linux上，对当前shell设置环境变量是用export。windows对应的是<strong>set</strong>或者<strong>setlocal</strong>。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/1749ab75/#more" rel="contents">
@@ -493,6 +566,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>246</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -502,9 +599,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          特朗普任期即将结束，他搞的事情却是一件比一件离谱。对中国疯狂重拳出击，我们已经见怪不怪了。在美国国内居然还搞到支持者冲击国会、中断大选结果认证，还被警察打死了4个支持者。虽然不如香港那么规模庞大的暴动，但是在“民主灯塔”发生这样的事情，放在十年前是根本不敢想象的。一个王朝也不过两百多年，美国是否已经开始走下坡路了呢——美式民主的内耗，可以通过大选经费年年增长来看见，也可以通过这次两大候选人之间超越党本身、发展到全国各地民间的对抗来看见——真是期待未来的走向。
+          <p>特朗普任期即将结束，他搞的事情却是一件比一件离谱。对中国疯狂重拳出击，我们已经见怪不怪了。在美国国内居然还搞到支持者冲击国会、中断大选结果认证，还被警察打死了4个支持者。虽然不如香港那么规模庞大的暴动，但是在“民主灯塔”发生这样的事情，放在十年前是根本不敢想象的。一个王朝也不过两百多年，美国是否已经开始走下坡路了呢——美式民主的内耗，可以通过大选经费年年增长来看见，也可以通过这次两大候选人之间超越党本身、发展到全国各地民间的对抗来看见——真是期待未来的走向。</p>
+<p>和支持者暴动一起的，是反华的在美华人因为感染新冠病毒接连去世，实在是大快人心。</p>
 
-和支持者暴动一起的，是反华的在美华人因为感染新冠病毒接连去世，实在是大快人心。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/e38aff23/#more" rel="contents">
@@ -580,6 +677,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>82</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -589,9 +710,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          wordpress本来应该允许mp4上传的，但是无论如何都说不是安全的文件类型。后来看到一篇博客，了解了可能是php的模块fileinfo的问题，就想着怎么禁用fileinfo。
+          <p>wordpress本来应该允许mp4上传的，但是无论如何都说不是安全的文件类型。后来看到<a target="_blank" rel="noopener" href="https://www.minglang.org/3241">一篇博客</a>，了解了可能是php的模块fileinfo的问题，就想着怎么禁用fileinfo。</p>
+<p>由于使用的ubuntu，提供了phpdismod命令，所以直接phpdismod fileinfo然后重启apache2就可以了。</p>
 
-由于使用的ubuntu，提供了phpdismod命令，所以直接phpdismod fileinfo然后重启apache2就可以了。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/34319f9a/#more" rel="contents">
@@ -663,6 +784,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.5k</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>4分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -677,6 +822,11 @@
 <p>195</p>
 <p>湖旁边有些奇怪的香港风格的模型，小黎要求拍一张：</p>
 <p>304</p>
+<p>鲸鲨馆和其他馆都比较像博物馆，有个窗口来看鱼，然后旁边有个牌子介绍是什么鱼、有什么习性。比如下面的花园鳗：</p>
+<p>440</p>
+<p>因为灯光太暗，很难拍清。还有珊瑚和小丑鱼：</p>
+<p>544</p>
+<p>接下来是各种鲼，有几只特别喜欢贴着玻璃露出肚皮：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/5b5f2340/#more" rel="contents">
@@ -748,6 +898,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>41</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -757,7 +931,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          powershell以为自己很牛逼，mysqldump出来的sql是utf16，然后之后恢复的时候导入就会爆炸。千万不要相信微软搞的新东西。
+          <p>powershell以为自己很牛逼，mysqldump出来的sql是utf16，然后之后恢复的时候导入就会爆炸。千万不要相信微软搞的新东西。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/749eb3dd/#more" rel="contents">
@@ -829,6 +1004,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>197</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -838,13 +1037,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          Nginx个毛，换成Apache了。
+          <p>Nginx个毛，换成Apache了。</p>
+<p>主要原因是CentOS属实老古董，仓库里的Nginx都不知道是什么年代的。自己编译的Nginx想要添加模块难上天。反正就是各种不方便。所以就换成Ubuntu 20.04了。中间还去Vultr开了个“钟点机”，拿来临时放备份。</p>
+<p>迁移里面最大的坑就是MySQL了，Ubuntu安装的8.0跟5.7导出的备份不兼容，连密码都改不了。只能各种骚操作降级回5.7.32。降级之后倒是好了，配置完Apache之后所有网站都无痛启动了。</p>
+<p>装官方仓库的Apache就是好，什么a2enmod、a2ensite、apache2ctl用起来真顺手，想要添加组件直接apt就完事。哪还需要手动ln -s啊。</p>
 
-主要原因是CentOS属实老古董，仓库里的Nginx都不知道是什么年代的。自己编译的Nginx想要添加模块难上天。反正就是各种不方便。所以就换成Ubuntu 20.04了。中间还去Vultr开了个“钟点机”，拿来临时放备份。
-
-迁移里面最大的坑就是MySQL了，Ubuntu安装的8.0跟5.7导出的备份不兼容，连密码都改不了。只能各种骚操作降级回5.7.32。降级之后倒是好了，配置完Apache之后所有网站都无痛启动了。
-
-装官方仓库的Apache就是好，什么a2enmod、a2ensite、apache2ctl用起来真顺手，想要添加组件直接apt就完事
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/cfe4ab51/#more" rel="contents">
@@ -916,6 +1113,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>429</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -935,6 +1156,13 @@
 <blockquote>
 <p><strong>If you set <code>$wgVirtualRestConfig[&#39;modules&#39;][&#39;parsoid&#39;]</code> then you will also need to manually install Parsoid</strong>, either on a separate server or via <a target="_blank" rel="noopener" href="https://www.mediawiki.org/wiki/Parsoid#Linking_a_developer_checkout_of_Parsoid">the developer instructions on the Parsoid page</a>.</p>
 </blockquote>
+<p>点开这个链接，跟着配置了一堆，结果看见这句话的时候我整个人都懵逼了：</p>
+<blockquote>
+<p>If you’re serving MediaWiki with Nginx, you’ll need to also add something like this to your server conf:</p>
+</blockquote>
+<p>location /rest.php/ {<br>    try_files $uri $uri/ /rest.php?$query_string;<br>}</p>
+<p>加到Nginx的conf里面再reload，突然就可以了，把自己装的Parsoid和相应的配置全都恢复原状，依然可以。</p>
+<p>靠了，只需要加这个就完事了，mediawiki的安装文档又不好好写这个……真是恶心人。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/ce1bdff1/#more" rel="contents">
@@ -997,6 +1225,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>119</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -1006,11 +1258,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          近几天因为要大量打印文件，所以父亲建议我把文件提交到路由器上的硬盘。但是路由器由于固件版本，认证用的是smb1；而现在linux的smbclient默认的是smb2以上，windows也默认关闭对smb1的支持，所以需要重新打开。
+          <p>近几天因为要大量打印文件，所以父亲建议我把文件提交到路由器上的硬盘。但是路由器由于固件版本，认证用的是smb1；而现在linux的smbclient默认的是smb2以上，windows也默认关闭对smb1的支持，所以需要重新打开。</p>
+<p>linux的配置是在/etc/smb.conf添加一行option，详细可以查google。</p>
+<p>windows则是在控制面板-程序-windows功能里面，打开“对SMB1的支持”。</p>
 
-linux的配置是在/etc/smb.conf添加一行option，详细可以查google。
-
-windows则是在控制面板-程序-windows功能里面，打开“对SMB1的支持”。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/24b5e9ea/#more" rel="contents">

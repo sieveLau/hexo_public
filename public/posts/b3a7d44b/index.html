@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="在Visual Studio中用Qt的东西非常多坑。  1. 把项目放到Git上再clone回来，直接build就会报错。Qt的VS Tool像个弱智一样不会重新补回需要的信息。首先用Qt要在项目配置中加include和附加库目录。第二是需要把文件中的#include改成完整路径，比如要改成。这样就不会出现Git的问题了。  2. 非成员函数也要通过“添加-Add Qt Class”来添加一对.h">
+  <meta name="description" content="在Visual Studio中用Qt的东西非常多坑。 1. 把项目放到Git上再clone回来，直接build就会报错。Qt的VS Tool像个弱智一样不会重新补回需要的信息。首先用Qt要在项目配置中加include和附加库目录。第二是需要把文件中的#include改成完整路径，比如要改成&lt;QtCore&#x2F;QString&gt;。这样就不会出现Git的问题了。 2. 非成员函数也要通过“添加-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Qt使用的记录">
 <meta property="og:url" content="https://blog.huaj.tk/posts/b3a7d44b/index.html">
 <meta property="og:site_name" content="Nugo">
-<meta property="og:description" content="在Visual Studio中用Qt的东西非常多坑。  1. 把项目放到Git上再clone回来，直接build就会报错。Qt的VS Tool像个弱智一样不会重新补回需要的信息。首先用Qt要在项目配置中加include和附加库目录。第二是需要把文件中的#include改成完整路径，比如要改成。这样就不会出现Git的问题了。  2. 非成员函数也要通过“添加-Add Qt Class”来添加一对.h">
+<meta property="og:description" content="在Visual Studio中用Qt的东西非常多坑。 1. 把项目放到Git上再clone回来，直接build就会报错。Qt的VS Tool像个弱智一样不会重新补回需要的信息。首先用Qt要在项目配置中加include和附加库目录。第二是需要把文件中的#include改成完整路径，比如要改成&lt;QtCore&#x2F;QString&gt;。这样就不会出现Git的问题了。 2. 非成员函数也要通过“添加-">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-14T03:11:00.000Z">
 <meta property="article:modified_time" content="2021-06-08T07:07:46.481Z">
@@ -243,6 +243,30 @@
             </span>
 
           
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>182</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
 
         </div>
       </header>

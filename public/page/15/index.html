@@ -238,6 +238,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>16</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -247,7 +271,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          可怜的多肉已经超时两天没有喝水了
+          <p>可怜的多肉已经超时两天没有喝水了</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/b993d328/#more" rel="contents">
@@ -319,6 +344,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>117</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -328,12 +377,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          之前忘了调强制301 https跳转，今天想起来想要做，但是发现了新的做法：在index.php里添加跳转代码，而不是在nginx的conf文件里添加，可以节省资源：
+          <p>之前忘了调强制301 https跳转，今天想起来想要做，但是发现了新的做法：在index.php里添加跳转代码，而不是在nginx的conf文件里添加，可以节省资源：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!((<span class="keyword">isset</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTPS&#x27;</span>])&amp;&amp;<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTPS&#x27;</span>]==<span class="string">&#x27;on&#x27;</span>)(<span class="keyword">isset</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_X_FORWARDED_PROTO&#x27;</span>])&amp;&amp;<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_X_FORWARDED_PROTO&#x27;</span>]==<span class="string">&#x27;https&#x27;</span>)))&#123; Header(<span class="string">&quot;HTTP/1.1 301 Moved Permanently&quot;</span>); header(<span class="string">&#x27;Location: https://&#x27;</span>.<span class="variable">$_SERVER</span>[<span class="string">&#x27;SERVER_NAME&#x27;</span>].<span class="variable">$_SERVER</span>[<span class="string">&#x27;REQUEST_URI&#x27;</span>]); &#125;</span><br></pre></td></tr></table></figure>
 
-1
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/muzi187/article/details/78789441">CSDN PHP代码http跳转到https</a></p>
 
-
-if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_FORWARDED_PROTO'])&&$_SERVER['HTTP_X_FORWARDED_PROTO']=='https'))){ Header("HTTP/1.1 301 Moved Permanently"); header('Location: htt
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2fddf513/#more" rel="contents">
@@ -409,6 +457,30 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>642</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -426,6 +498,12 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 </ul>
 <h3 id="log4j-2-maven"><a href="#log4j-2-maven" class="headerlink" title="log4j 2 maven"></a>log4j 2 maven</h3><p>在pom.xml里添加：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.11.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.11.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="log4j2-xml"><a href="#log4j2-xml" class="headerlink" title="log4j2.xml"></a>log4j2.xml</h3><p>在src/main目录下新建一个文件夹resources，在里面新建一个log4j2.xml，并_右键resources ➤ Mark Directory as ➤ Resources Root_。由CSDN的参考链接添加以下配置到log4j2.xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Configuration</span> <span class="attr">status</span>=<span class="string">&quot;WARN&quot;</span> <span class="attr">monitorInterval</span>=<span class="string">&quot;300&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;LOG_HOME&quot;</span>&gt;</span>/var/log<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;FILE_NAME&quot;</span>&gt;</span>Thermal<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Appenders</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Console</span> <span class="attr">name</span>=<span class="string">&quot;Console&quot;</span> <span class="attr">target</span>=<span class="string">&quot;SYSTEM_OUT&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span> <span class="attr">pattern</span>=<span class="string">&quot;%d&#123;HH:mm:ss.SSS&#125; [%t] %-5level %logger&#123;36&#125; - %msg%n&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Console</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">RollingRandomAccessFile</span> <span class="attr">name</span>=<span class="string">&quot;MyFile&quot;</span></span></span><br><span class="line"><span class="tag">                                 <span class="attr">fileName</span>=<span class="string">&quot;$&#123;LOG_HOME&#125;/$&#123;FILE_NAME&#125;.log&quot;</span></span></span><br><span class="line"><span class="tag">                                 <span class="attr">filePattern</span>=<span class="string">&quot;$&#123;LOG_HOME&#125;/$$&#123;date:yyyy-MM&#125;/$&#123;FILE_NAME&#125;-%d&#123;yyyy-MM-dd HH-mm&#125;-%i.log&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">PatternLayout</span></span></span><br><span class="line"><span class="tag">                    <span class="attr">pattern</span>=<span class="string">&quot;%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%t] %-5level %logger&#123;36&#125; - %msg%n&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Policies</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">TimeBasedTriggeringPolicy</span> <span class="attr">interval</span>=<span class="string">&quot;1&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">SizeBasedTriggeringPolicy</span> <span class="attr">size</span>=<span class="string">&quot;10 MB&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">Policies</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">DefaultRolloverStrategy</span> <span class="attr">max</span>=<span class="string">&quot;20&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">RollingRandomAccessFile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Appenders</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Loggers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Logger</span> <span class="attr">name</span>=<span class="string">&quot;mylog&quot;</span> <span class="attr">level</span>=<span class="string">&quot;trace&quot;</span> <span class="attr">additivity</span>=<span class="string">&quot;false&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;MyFile&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Logger</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Root</span> <span class="attr">level</span>=<span class="string">&quot;error&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">AppenderRef</span> <span class="attr">ref</span>=<span class="string">&quot;Console&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Root</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Loggers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意更改”LOG_HOME”和”FILE_NAME”后面的内容来配置log文件的位置。</p>
+<h3 id="编译时带上log4j2-xml"><a href="#编译时带上log4j2-xml" class="headerlink" title="编译时带上log4j2.xml"></a>编译时带上log4j2.xml</h3>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/a0829f9/#more" rel="contents">
@@ -497,6 +575,30 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2.3k</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>7分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -511,6 +613,11 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 <p>30号早上睡了舒舒服服的觉，到八点半才起床收拾东西。然后就直接跑去北京西了。还好路上不多人，很多人还要上班。在火车上昏昏沉沉就睡过去了，中间吃了两个方便面，然后晚上勉勉强强睡着，就到第二天了。结果火车还晚点了。然而路盲的妹子问我在哪里出站，但是我是不知道的呀，所以就只能让她在地铁站里等一等，然后我去找她。还好没让她出来，她拖着个箱子还是下雨天会很麻烦的啦。虽然不知道怎么做到的，但是我竟然一次就找到她了，可能是心灵感应啦。</p>
 <p>回到中大南校，先去肯德基吃了一顿早饭（还被抢走了原味鸡），接着坐岐关车回珠海。虽然车需要绕路去东校接其他人，但是比起五一塞半天在路上已经是非常节省时间了。妹子还吐槽都开了一个小时了怎么还在广州emmmm……</p>
 <p>到了珠海先入住酒店。初看之下是个好酒店，有天窗，采光很棒；洗澡间是石头地板，触感也很棒。但是确实就是个酒店，和酒店式公寓差远了——沐浴露什么的就是一小瓶的，插座也好少……还有地板莫名其妙很滑就像是抹了洗洁精、排气扇不能独立控制所以洗澡之后风一阵一阵的有点冷、隔音很差甚至还有各种噪音就不说了；一整晚都没休息好。但是稍微洗澡之后被带去了上课，把我放到了自习室里她就去上历史课。中大竟然还有自习室，真的厉害诶！然后因为怕羞，所以没有去参加她的第二节课喵。下课之后因为我不想吃外卖，所以就想进城吃饭；结果车站一万个人，车上也一万个人，根本上不去；只好去饭堂看看。然而一是时间不早了，二是饭堂阿姨们也一心想着放假，结果只能在清真饭堂吃到牛肉饺子——虽然真的好好吃✔。晚上走回酒店的时候被带着去图书馆看了一下，虽然不够中财的图书馆漂亮，但是也是很不错的啦（比起南校的，这个气派一点）。路上还在鸡山村里转了一下，其实如果有时间是会想转多几圈的。</p>
+<p>五一直接睡了个大懒觉，接着回中大，她要打印东西啦～但是大家都休息了，所以就只能叫了一个她最喜欢的外卖吃吃（竟然地址可以填哪一座的自动贩卖机上面的诶，好神奇）。然后就去入住新的酒店，稍微休息一下之后出门去华发商圈。但是路上好堵呀，饿肚子的喵喵好容易生气，所以就发脾气了……到地方之后没有去本来想去的大广场吃吃，倒是拉着喵喵突然间跑到了烧烤街吃牛杂火锅。然而我们没有想到48块的锅底已经有了牛杂萝卜之类的东西，所以还加了其他料，结果就吃撑了。她的愿望清单里的“牛肉火锅”变成了“牛杂火锅”，但是也吃得好开心～吃完之后我们去了对面的大商场逛逛了，然后买了奶茶还吃了雪糕，然后就回程啦。</p>
+<p>五二的话不能睡懒觉，早早起床出发去澳门。但是虽然早起了，公交车还是很多人，口岸也好多人，换外汇的地方也是好多人。绕来绕去两个多小时才过了关，但是又花了一小时才去到澳门威尼斯人……节假日真的太多人了。威尼斯人一进去就有一种纸醉金迷的感觉呢，很奢华……核心只是一个赌场，但是赌场的面积占比很少——而且竟然要21岁才能进，被拒了呢✖。妹子说，赌场这种东西，其实就会有酒店、购物商场配套在一起，只要有钱，来赌场的人是不用出这个门的——所以我们就只能转转商店那一层了。真的精致，真的有钱，真的是奢华……一层楼很高，弄成欧式风格（什么佛罗伦萨小镇的类型）；还有河，河里还有人给你撑船……简直进大观园orz。然后我们就坐公交车去渔人码头。公交车很贵，是环线，上车就6块钱，而且司机还会拒载（即使有人下车了，还是不会开前门让人上车）。司机和一些乘客谈笑风生，但是我和妹子闹矛盾了……其实主要还是饿就会发脾气这个毛病。问题是作为一个习惯了内地物价的、极度节俭的人，我是绝对不能接受在澳门吃东西的……结果就变成了几乎一直在生气，还是循环生气的那种，妹子都不想理我了。后来过马路的时候因为习惯了内地的车流方向，所以差点被车撞死，还好被妹子拉住了。去完渔人码头，我们就走过去牌坊那里。然后我看着高德地图变成人肉导航器，带着妹子不走正路直接穿到了牌坊旁边的大炮台上面——看见牌坊广场那么多人，我们决定在大炮台上面拍拍照就算了。启程回去的时候又是下雨，所以发现了资本主义的问题：人行道窄得连两个人撑伞面对面走过去都不够位。但是借着骑楼，淋雨没有特别多。澳门还有一个特点是车会很礼貌地让人。而且因为路窄，所以行人过马路也很快，对交通效率的影响不是特别大。但是内地的路那么宽，车那么多，还是不能像澳门那样推行车让人的制度的。在回去关口的时候，路过一个葬礼的地方；似乎那个人很有地位，很多有权有势的人（什么电视厅领导啊社保局局长之类的）都送了花圈。算是见识了一次达官贵人逝世的葬礼有多大排面。晚上去必胜客吃了一顿，还是挺贵的。</p>
+<p>五三又睡了大懒觉，然后去尝试了一下妹子心心念念的拉面。拉面一般般，比不过广州的豚一。然后我们步行去日月贝（就是珠海的大剧院啦，建成了一个扇贝的样子）。上一次回来我们走了名亭公园的一边，这一次走了名亭公园的另一边，好开心。这次走着“社会主义的康庄大道”，感觉真的是中国牛逼！没有买某个剧的票，所以只是随便看看剧场的外形。大半天的时间倒是花在了逛公园上。日月贝的岛叫野狸岛，有一条环岛公路，整个岛都是公园。我们沿着公园的沿海步道逛，中间还停下来吃果冻，看着从澳门的方向开过来的游艇从灰蒙蒙的雾霾里逐渐出现，颇有一种“资本主义被迷雾笼罩”的感觉。自从体育考试之后就放弃了运动导致脚力很差，所以只是走了半个环线就上山抄近路回去了。晚上虽说要吃烧烤，但是还是在那家串串店吃了一下就收工了。摇呀摇的坐车回中大，吃到了饭堂的雪糕，超级好吃！还便宜！我成柠檬精啦！</p>
+<p>五月四号退了房之后回中大吃饭堂，结果二楼还是没有开，所以吃了牛肉拉面（怎么又是清真！）又吃了雪糕，然后出发去关口——珠海站在关口附近。下车站在摩尔广场——这名字太鬼畜了，一楼在进行中国好声音海选（很多人真的很有勇气诶唱歌那么完蛋都敢上台）。时间还早，我们去沃尔玛逛了一圈，为晚上的睡觉买了一个U形枕，接着妹子在买早餐的时候我看上了法棍，感觉晚上能吃✔。晚餐是烤鱼，比较辣，所以以后都不会带她过来吃了。接着生死时速跑过去上车。哭哭咧就坐车离开啦。</p>
+<p>六月会见面的哦～</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/109d80d0/#more" rel="contents">
@@ -586,6 +693,30 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>72</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -595,9 +726,9 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
     <div class="post-body" itemprop="articleBody">
 
       
-          参考：File is locked - how to unlock
+          <p>参考：<a target="_blank" rel="noopener" href="https://help.nextcloud.com/t/file-is-locked-how-to-unlock/1883">File is locked - how to unlock</a></p>
+<p>首先ssh进shell，把config/config.php里面的<code>&#39;maintenance&#39; =&gt; false,</code>改成<code>&#39;maintenance&#39; =&gt; true,</code>（没有这一行就添上）。 然后进phpadmin，选中nextcloud的数据库，执行SQL命令：<code>DELETE FROM oc_file_locks WHERE 1</code> 然后再把<code>&#39;maintenance&#39; =&gt; true,</code>改回false。</p>
 
-首先ssh进shell，把config/config.php里面的'maintenance' => false,改成'maintenance' => true,（没有这一行就添上）。 然后进phpadmin，选中nextcloud的数据库，执行SQL命令：DELETE FROM oc_file_locks WHERE 1 然后再把'maintenance' => true,改回false。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/ea7ba07e/#more" rel="contents">
@@ -669,6 +800,30 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>89</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -678,7 +833,8 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
     <div class="post-body" itemprop="articleBody">
 
       
-          看见电视里说上海推进垃圾分类，想起以前小区门口会有一个收买纸皮箱、旧报纸的人，我们家的旧报纸扎一起就会卖给她。好像已经很久没有见过她了。 又想起以前每天的新报纸都会放在沙发上，正对电视机的位置。
+          <p>看见电视里说上海推进垃圾分类，想起以前小区门口会有一个收买纸皮箱、旧报纸的人，我们家的旧报纸扎一起就会卖给她。好像已经很久没有见过她了。 又想起以前每天的新报纸都会放在沙发上，正对电视机的位置。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/231676da/#more" rel="contents">
@@ -754,6 +910,30 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>21</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -763,7 +943,8 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
     <div class="post-body" itemprop="articleBody">
 
       
-          有些东西还是选择不知道比较好。知道了徒增烦恼。
+          <p>有些东西还是选择不知道比较好。知道了徒增烦恼。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/292cceb9/#more" rel="contents">
@@ -839,6 +1020,30 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>7</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -848,7 +1053,8 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
     <div class="post-body" itemprop="articleBody">
 
       
-          [2 简直超值好吗！
+          <p>[2 简直超值好吗！</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/5e2bfe2f/#more" rel="contents">
@@ -924,6 +1130,30 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>662</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -935,7 +1165,11 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
       
           <p>参考： * <a target="_blank" rel="noopener" href="https://github.com/nextcloud/nextcloud-snap/wiki/Migrating-from-nextcloud-snap-to-Nextcloud-server">Migrating from nextcloud snap to Nextcloud server</a> * <a target="_blank" rel="noopener" href="http://www.cnblogs.com/peida/archive/2013/03/15/2960802.html">每天一个linux命令（60）：scp命令</a> * <a target="_blank" rel="noopener" href="https://websiteforstudents.com/setup-nextcloud-on-ubuntu-18-04-lts-beta-with-apache2-mariadb-and-php-7-1-support/">Setup NextCloud on Ubuntu 18.04 LTS with Apache2, MariaDB and PHP 7.1 Support</a></p>
 <h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>一台装了nexcloud-snap的服务器A；一台有足够空间装下前者保存的所有文档的服务器B。</p>
-<h1 id="导出备份"><a href="#导出备份" class="headerlink" title="导出备份"></a>导出备份</h1><h2 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h2>
+<h1 id="导出备份"><a href="#导出备份" class="headerlink" title="导出备份"></a>导出备份</h1><h2 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h2><p>在A上执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nextcloud.mysqldump &gt; my-old-nextcloud.sql</span><br></pre></td></tr></table></figure>
+
+<p>导出数据库。然后scp把这个文件发到B。</p>
+<h2 id="备份文件"><a href="#备份文件" class="headerlink" title="备份文件"></a>备份文件</h2><p>nextcloud-snap的文件在</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/aa98c20/#more" rel="contents">
@@ -1011,6 +1245,30 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>151</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -1020,12 +1278,10 @@ if(!((isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']=='on')(isset($_SERVER['HTTP_X_
     <div class="post-body" itemprop="articleBody">
 
       
-          突如其来的，星期六好多人宣布脱单了。柳絮纷飞的季节里，大家都心动了呢。可是如何让不开心的人不会因为与气氛格格不入而消沉呢，怎么做到让别人为别人获得幸福而开心呢。人可能只能改变自己。人只能自己拯救自己呢。
+          <p>突如其来的，星期六好多人宣布脱单了。柳絮纷飞的季节里，大家都心动了呢。可是如何让不开心的人不会因为与气氛格格不入而消沉呢，怎么做到让别人为别人获得幸福而开心呢。人可能只能改变自己。人只能自己拯救自己呢。</p>
+<hr>
+<p>可是今天的我只是浑浑噩噩地答了三份不会及格的试卷，因为早就知道会加重到今天这个地步的感冒而再次就医。也就做了这两件事而已。</p>
 
-
-
-
-可是今天的我只是浑浑噩噩地答了三份不会及格的试卷，因为早就知道会加重到今天这个地步的感冒而再次就医。也就做了这两件事而已。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/4ac0bd24/#more" rel="contents">

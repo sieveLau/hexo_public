@@ -238,6 +238,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>560</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -247,9 +271,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          原来一直用C写的温控，但是想实现的很多功能都做不到——主要是C学得一点毛皮就开始写——但是习惯了Java想要什么功能就有什么包，以及成熟的IDE（好吧就是我智障总是写bug），所以决定改写成Java版本的。但是之前一直习惯了C和Linux的紧密相连，思路也是shell的思路，所以在Java里面也下意识想要用Process类的exec()来执行echo命令——风扇控制、频率限制都是通过写入文件来实现的。实际上因为exec()并不是一个shell，所以这样做是不行的。要想写入文件，还是要通过正式的FileWriter等类来实现。
-
-现在剩下的问题是怎么在IDE里实现用root权限测试程序，不然每次
+          <p>原来一直用C写的温控，但是想实现的很多功能都做不到——主要是C学得一点毛皮就开始写——但是习惯了Java想要什么功能就有什么包，以及成熟的IDE（好吧就是我智障总是写bug），所以决定改写成Java版本的。但是之前一直习惯了C和Linux的紧密相连，思路也是shell的思路，所以在Java里面也下意识想要用Process类的exec()来执行echo命令——风扇控制、频率限制都是通过写入文件来实现的。实际上因为exec()并不是一个shell，所以这样做是不行的。要想写入文件，还是要通过正式的FileWriter等类来实现。</p>
+<p>现在剩下的问题是怎么在IDE里实现用root权限测试程序，不然每次都要去terminal里sudo真是很烦恼。</p>
+<p>参考了： <a target="_blank" rel="noopener" href="http://www.runoob.com/java/java-filewriter.html">Java FileWriter类</a> <a target="_blank" rel="noopener" href="http://www.runoob.com/java/java-filereader.html">Java FileReader类</a> <a target="_blank" rel="noopener" href="https://blog.csdn.net/liuweiyuxiang/article/details/69487326">CSDN Java将字符串写入文件与将文件内容读取到字符串</a> <a target="_blank" rel="noopener" href="https://www.techiedelight.com/convert-char-array-string-java/">Techie Delight Convert char array to String in Java</a> <a target="_blank" rel="noopener" href="https://blog.csdn.net/fesdgasdgasdg/article/details/73556109">CSDN intellij idea 导出可执行jar</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Thread.sleep;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Thermal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[] tempSteps = &#123;<span class="number">48</span>, <span class="number">50</span>, <span class="number">55</span>, <span class="number">60</span>, <span class="number">70</span>, <span class="number">80</span>, <span class="number">84</span>, <span class="number">90</span>&#125;;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Boolean freqLimitOn = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">temperatureReader</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] temp = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">2</span>];</span><br><span class="line">        FileReader reader0 = <span class="keyword">new</span> FileReader(<span class="keyword">new</span> File(<span class="string">&quot;/sys/class/thermal/thermal_zone0/temp&quot;</span>));</span><br><span class="line">        FileReader reader1 = <span class="keyword">new</span> FileReader(<span class="keyword">new</span> File(<span class="string">&quot;/sys/class/thermal/thermal_zone1/temp&quot;</span>));</span><br><span class="line"></span><br><span class="line">        reader0.read(temp);</span><br><span class="line">        <span class="keyword">int</span> temp0 = Integer.parseInt(String.valueOf(temp));</span><br><span class="line">        reader1.read(temp);</span><br><span class="line">        <span class="keyword">int</span> temp1 = Integer.parseInt(String.valueOf(temp));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ((temp0 &gt;= temp1) ? temp0 : temp1);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fancontroller</span><span class="params">(<span class="keyword">int</span> level)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">&quot;/proc/acpi/ibm/fan&quot;</span>, <span class="keyword">false</span>);</span><br><span class="line">        fw.write(<span class="string">&quot;level &quot;</span> + level);</span><br><span class="line">        fw.flush();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">levelJudge</span><span class="params">(<span class="keyword">int</span> temperature)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = tempSteps.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (temperature &gt;= tempSteps[i]) &#123;</span><br><span class="line">                fancontroller(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">freqLimitSetter</span><span class="params">(<span class="keyword">long</span> freq)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        FileWriter fw;</span><br><span class="line">        String filepath;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">7</span>; i++) &#123;</span><br><span class="line">            filepath = String.format(<span class="string">&quot;/sys/devices/system/cpu/cpufreq/policy%d/scaling_max_freq&quot;</span>, i);</span><br><span class="line">            fw = <span class="keyword">new</span> FileWriter(filepath, <span class="keyword">false</span>);</span><br><span class="line">            fw.write(<span class="string">&quot;&quot;</span> + freq);</span><br><span class="line">            fw.flush();</span><br><span class="line">            fw.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">freqthrottle</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ((temperatureReader() &gt; <span class="number">84</span>) &amp;&amp; !freqLimitOn) &#123;</span><br><span class="line">            freqLimitSetter(<span class="number">2100000</span>);</span><br><span class="line">            freqLimitOn = <span class="keyword">true</span>;</span><br><span class="line">            System.out.println(<span class="string">&quot;limited cpu freq&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (freqLimitOn) &#123;</span><br><span class="line">            freqLimitSetter(<span class="number">3500000</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;unlimited cpu freq&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Thermal thermal = <span class="keyword">new</span> Thermal();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">                thermal.levelJudge(temperatureReader());</span><br><span class="line">                thermal.freqthrottle();</span><br><span class="line">                sleep(<span class="number">5000</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException  IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/9deb1a2f/#more" rel="contents">
@@ -325,6 +350,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>280</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -339,6 +388,9 @@
 <p>出门的时候还有电，回来就停电了，还越来越过分。本来只是所有房间没电，后来连门禁和水泵都断电了。生活没有电真是很不方便呢。</p>
 <hr>
 <p>下午的体育课直接考一千米。本来中午拿了咖啡粉准备泡咖啡，结果没电只能冲点速溶来替代了。上道之前就已经很紧张了，起跑的时候更是倒数。毕竟是考试，导致呼吸节奏已经非常难配合了。但是一开始跑得慢，到最后一百多米发现自己力气还够，所以开始加速冲刺，成功挽救到及格。</p>
+<p>结果就是躺床上休息了一个小时才恢复过来。</p>
+<p>醒过来之后宿舍来电了，刚好泡一壶咖啡，感觉和在家里喝的一样开心呢。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/99aa7c50/#more" rel="contents">
@@ -410,6 +462,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>113</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -419,7 +495,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          生日的时候栗子送了一只咖啡机，虽然需要用限功率的插座才能在宿舍里用，但是还是非常方便的。昨天终于把从高三喝到大二的一罐子绿茶给喝完了，和室友分享真的很开心，特别是他们也觉得好喝。然后今天开了铁观音。第一泡出来的时候真的好香啊。超喜欢喝茶了现在。
+          <p>生日的时候栗子送了一只咖啡机，虽然需要用限功率的插座才能在宿舍里用，但是还是非常方便的。昨天终于把从高三喝到大二的一罐子绿茶给喝完了，和室友分享真的很开心，特别是他们也觉得好喝。然后今天开了铁观音。第一泡出来的时候真的好香啊。超喜欢喝茶了现在。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/a348f6ea/#more" rel="contents">
@@ -495,6 +572,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>99</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -509,6 +610,7 @@
 <p>和妈妈讨论了一番之后觉得，即使考不过也要努力学，做到问心无愧才行。同时的话主课也是不能丢的，所以要挤时间来尽力学了。</p>
 <hr>
 <p>后天考一千米。体力已经恢复到能不丢人的地步了，但是及格就是妄想了。所以尽力吧。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/99aa7c50/#more" rel="contents">
@@ -584,6 +686,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>20.9k</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>70分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -610,6 +736,50 @@
 <li>14章（习近平新时代中国特色社会主义思想7章）</li>
 </ol>
 <h1 id="毛泽东思想的科学内涵"><a href="#毛泽东思想的科学内涵" class="headerlink" title="毛泽东思想的科学内涵"></a>毛泽东思想的科学内涵</h1><p>毛泽东思想的形成与发展：20年代末30年代初（延安时期），成熟于土地革命战争后期和抗日战争时期（35年毛泽东在党中央的领导地位）</p>
+<p>概念提出：</p>
+<ol>
+<li>41年张如心，毛泽东同志的思想</li>
+<li>43.7.5王稼祥，毛泽东思想；中国的共产主义，中国的马列主义，与本国现实、本国革命经验相结合的理论</li>
+<li>六届七中（党的会议的提出）：《关于若干历史问题的决议》</li>
+<li>七大（45.6.14）把毛泽东思想写入党章……指导思想</li>
+<li>八大（56）没有提毛泽东思想：苏联不同意</li>
+<li>十一届六中（81.6），《关于建国以来党的若干历史问题的决议》</li>
+<li>十二大（82.9）：毛泽东思想是马列注意在中国的运用和发展，是被实践证明了的关于中国革命<strong>和建设的</strong>正确的理论原则和经验总结，是中国共产党集体智慧的结晶<ol>
+<li>正确回答了毛泽东思想与马列主义基本原理的关系<ol>
+<li>马列主义是毛的理论基础（立场、观点、方法）<ol>
+<li> 立场：人民的立场</li>
+<li> 方法：唯物辩证法</li>
+</ol>
+</li>
+<li>毛是中国化的、形成了自己的科学体系的马‘<ol>
+<li> 六个关于</li>
+<li> 三个活的灵魂</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>正确回答了毛泽东思想同中国革命和建设具体实践的关系<ol>
+<li> 如果没有<strong>特殊国情</strong>，没有中共<strong>领导革命和建设的实践</strong>，就不可能有毛泽东思想</li>
+<li> 毛泽东思想是指引中国革命和建设实践取得胜利的指针。</li>
+</ol>
+</li>
+<li>正确回答了<strong>毛泽东个人</strong>和党的领导集体在创立、形成和发展毛泽东思想过程中的地位和作用<ol>
+<li> 是以毛泽东为主要代表的中国共产党人创立的，是党的<strong>集体智慧</strong>的结晶。毛泽东是<strong>杰出代表</strong>。</li>
+<li> 毛选4卷是毛泽东思想的集中体现</li>
+</ol>
+</li>
+<li>把作为党的指导思想的毛泽东思想与毛泽东晚年的错误理论区分开来<ol>
+<li> 毛泽东晚年的错误（无产阶级专政下继续革命的错误理论）和毛泽东思想是两个范畴</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="毛泽东思想的当代价值"><a href="#毛泽东思想的当代价值" class="headerlink" title="毛泽东思想的当代价值"></a>毛泽东思想的当代价值</h1><ol>
+<li> 马’中国化的第一个重大理论成果，中国革命和建设的科学指南，中国共产党和中国人民宝贵的精神财富。具有指导意义，马‘中国化继续发展的重要源头</li>
+<li> 毛’确立的一切从中国实际出发、<strong>理论联系实际</strong>的思想原则……党的思想路线。毛‘的著作中的基本原理、原则、方法都是有普遍意义的、指导作用</li>
+</ol>
+<h2 id="实事求是的思想路线"><a href="#实事求是的思想路线" class="headerlink" title="实事求是的思想路线"></a>实事求是的思想路线</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/4670fb8e/#more" rel="contents">
@@ -685,6 +855,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>528</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -699,6 +893,11 @@
 <p>今天上的计量经济学课，一点都没听，倒是翻开了财务会计疯狂地看。把投资剩下的几页看完了，然后固定资产的40页看了20多，本来打算今天之内能够看完，结果flag又倒了。主要花了时间在摸索bcache上。</p>
 <hr>
 <p>体育课非常的难以描述。课开始的时候温大佬告诉我下星期就考1000米，但是跑一下就气喘的体质怎么过下个星期的考试呢。虽然这个老师并不会让人挂科，但是也会想尽力考高的。尽力每天都去跑步吧，努力一下至少得有个分呀。然后体育课一整节都是踢球，作为后卫应该算是尽心尽力了，只丢了一个球。但是完全不会进攻，带球不行，传球也不好，果然是进攻难防守容易。做队友能够放心的后盾。</p>
+<hr>
+<p>昨天吵完架，今天和好了，算是好事一件。</p>
+<hr>
+<p>晚上金融市场学，虽然老师一如既往让我感叹他知识渊博，除了教我们课本内容，还补充了很多中国的实际情况，是非常有利的，但是比较碎片化，不像毛概一样很系统。所以非常难做笔记，Typora里面用的很多水平线做分割——毕竟有的内容和上面的不承接，但是又不足以单独开一个title来记，就很麻烦。</p>
+<p>所以听课半听不听，选择了完善一下archwiki的翻译。有的中文页面真是奇葩，竟然把英文页面搬过来，然后把Installation之类的标题给翻译成中文就算了。最麻烦的就是这种，要完全重做的。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/99aa7c50/#more" rel="contents">
@@ -774,6 +973,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>600</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>2分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -790,6 +1013,10 @@
 <p>…… 非gnome系的解决方案：安装gnome-settings-daemon，然后运行/usr/lib/gsd-xsettings</p>
 <p>manjaro+awesome下测试通过</p>
 </blockquote>
+<p>确实OK了。最后再加一个systemd服务在开机的时候自动启动就好了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=GSD-Xsettings Service</span><br><span class="line">After=rc-local.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">#WorkingDirectory=/home/sieve</span><br><span class="line">ExecStart=/usr/lib/gsd-xsettings</span><br><span class="line">Restart=always</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="gentoo"><a href="#gentoo" class="headerlink" title="gentoo"></a>gentoo</h1><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>gentoo下官方当然是没有这个包的，所以要靠野包(overlay)来实现。首先是安装layman来管理overlay，然后<code>layman -L &amp;&amp; layman -a deepin</code>把deepin的overlay加进去。他们的github是：<a target="_blank" rel="noopener" href="https://github.com/zhtengw/deepin-overlay">deepin-overlay</a>。 第二步，<code>emerge --ask deepin-wine-wechat</code>，甚至可以加上<code>--newuse --update</code>，然后就会出现一大堆条件未满足，一般会在<code>/etc/portage/package.use</code>文件夹里面产生<code>._cfg</code>开头的文件，把那个文件<code>cat</code>进<code>/etc/portage/package.use</code>里面的一个文件里面就好了，我是<code>cat</code>进了<code>wechat</code>文件里面。然后再来一次<code>emerge</code>，这次应该就能开始编译了。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/4270b1b8/#more" rel="contents">
@@ -865,6 +1092,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>254</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -879,6 +1130,7 @@
 <p>昨天和今天都忙于把unbound的文档翻译成中文。虽然翻译水平不高，但是如果有需要的人看到应该也是能够看懂的。做一下翻译来维持一下英文水平才行了。大概就是所谓的来到这个世界不能只是想着要得到什么，也要想着能够贡献什么吧。</p>
 <p>今天和昨天终于把第三第四章的成本会计笔记给补上了。但是还有那么多，大概期末考试是一定会完蛋的了。辅修证也够啦，双学位就不要了。</p>
 <p>那么UI是今天做还是明天做呢。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/99aa7c50/#more" rel="contents">
@@ -954,6 +1206,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2k</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>9分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -965,6 +1241,10 @@
       
           <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><h2 id="什么是计量经济学"><a href="#什么是计量经济学" class="headerlink" title="什么是计量经济学"></a>什么是计量经济学</h2><h2 id="计量经济学方法"><a href="#计量经济学方法" class="headerlink" title="计量经济学方法"></a>计量经济学方法</h2><p>理论 ——&gt; 模型 ——&gt; 计量经济模型（加了随机性和不确定性）</p>
 <p>事实 ——&gt; 数据 ——&gt; 加工好的数据</p>
+<p>统计理论 ——&gt; 计量经济技术</p>
+<p>用计量经济技术，用加工好的数据，估计计量经济模型</p>
+<p>计量经济学的主要工作：估计参数；检验基于经济理论或假说的关系式是否成立</p>
+<h3 id="计量经济学建模的步骤"><a href="#计量经济学建模的步骤" class="headerlink" title="计量经济学建模的步骤"></a>计量经济学建模的步骤</h3><p>Q=\alpha + \beta P+\mu</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/baffb28f/#more" rel="contents">
@@ -1040,6 +1320,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>5.9k</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>20分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -1086,6 +1390,14 @@
 <li> 反映了金融资产的供应者和需求者之间所形成的供求关系</li>
 <li> 包含了交易过程中所产生的运行机制</li>
 </ol>
+<p>金融资产、金融工具、证券——教材认为是一回事</p>
+<p>与要素市场和产品市场的差异：参与者的关系不是单纯的买卖关系……借贷关系、委托代理关系，以<strong>信用为基础</strong>的，拿了要还；交易的对象是特殊的商品；交易场所通常是无形的</p>
+<ol>
+<li> 可置信度——天灾等外部不确定性</li>
+<li> 内部：两个主体之间的利益冲突（信息不对称：借款之前逆向选择，事后道德风险）</li>
+</ol>
+<p>金融工具——金融契约：资金短缺方、资金盈余方：签合同用于资金使用权的转移……有时候也不是为了资金问题，所以交易对象也不一定是资金。可能是为了价格风险的配置</p>
+<h2 id="金融市场的功能"><a href="#金融市场的功能" class="headerlink" title="金融市场的功能"></a>金融市场的功能</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/14a481de/#more" rel="contents">

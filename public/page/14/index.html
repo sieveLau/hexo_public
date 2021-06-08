@@ -238,6 +238,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>67</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -247,33 +271,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          Execute an external program and capture the output
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
+          <p><a target="_blank" rel="noopener" href="http://www.codecodex.com/wiki/Execute_an_external_program_and_capture_the_output">Execute an external program and capture the output</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String argv[])</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">try</span> &#123;  </span><br><span class="line">      String line;  </span><br><span class="line">      Process p = Runtime.getRuntime().exec  </span><br><span class="line">        (System.getenv(<span class="string">&quot;windir&quot;</span>) +<span class="string">&quot;\\system32\\&quot;</span>+<span class="string">&quot;tree.com /A&quot;</span>);  </span><br><span class="line">      BufferedReader input =  </span><br><span class="line">        <span class="keyword">new</span> BufferedReader  </span><br><span class="line">          (<span class="keyword">new</span> InputStreamReader(p.getInputStream()));  </span><br><span class="line">      <span class="keyword">while</span> ((line = input.readLine()) != <span class="keyword">null</span>) &#123;  </span><br><span class="line">        System.out.println(line);  </span><br><span class="line">      &#125;  </span><br><span class="line">      input.close();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">catch</span> (Exception err) &#123;  </span><br><span class="line">      err.printStackTrace();  </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 
-public static void main(String argv[]) {  
-    try {  
-      String line;  
-      Process p = Runtime.getRuntime().exec  
-        (System.getenv("windir") +"\\system32\\"+"tree.com /A");  
-      BufferedR
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/2e6fc87f/#more" rel="contents">
@@ -349,6 +350,30 @@ public static void main(String argv[]) {
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>34</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -358,26 +383,10 @@ public static void main(String argv[]) {
     <div class="post-body" itemprop="articleBody">
 
       
-          用到Timer。Java - How to update a panel every second
-
-1
-2
-3
-4
-5
-6
-7
-8
+          <p>用到Timer。<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/19727449/java-how-to-update-a-panel-every-second">Java - How to update a panel every second</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Timer timer = new Timer(1000, new ActionListener() &#123;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">public void actionPerformed(ActionEvent arg0) &#123;</span><br><span class="line">l.setText(new Date().toString());</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">timer.start();</span><br></pre></td></tr></table></figure>
 
 
-Timer timer = new Timer(1000, new ActionListener() {
-
-@Override
-public void actionPerformed(ActionEvent arg0) {
-l.setText(new Date().toString());
-}
-});
-timer.start();
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/43474df0/#more" rel="contents">
@@ -453,6 +462,30 @@ timer.start();
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>52</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -462,9 +495,9 @@ timer.start();
     <div class="post-body" itemprop="articleBody">
 
       
-          测试和生成表达式的网站：https://www.sojson.com/regex/generate
+          <p>测试和生成表达式的网站：<a target="_blank" rel="noopener" href="https://www.sojson.com/regex/generate">https://www.sojson.com/regex/generate</a></p>
+<p>Matcher的matches()方法只在整个String都匹配的时候才是true，如果要匹配的是String中的某一部分，就要用find()。</p>
 
-Matcher的matches()方法只在整个String都匹配的时候才是true，如果要匹配的是String中的某一部分，就要用find()。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/4ea1809c/#more" rel="contents">
@@ -536,6 +569,30 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>49</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -545,9 +602,9 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
     <div class="post-body" itemprop="articleBody">
 
       
-          tp_smapi已经去世了，如果安装只会导致systemd-modules-load在启动的时候报错。
+          <p>tp_smapi已经去世了，如果安装只会导致systemd-modules-load在启动的时候报错。</p>
+<p>只需要用内核自带的thinkpad_acpi就可以了，一样可以控制充电阈值。</p>
 
-只需要用内核自带的thinkpad_acpi就可以了，一样可以控制充电阈值。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/15704159/#more" rel="contents">
@@ -623,6 +680,30 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>170</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -632,7 +713,8 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
     <div class="post-body" itemprop="articleBody">
 
       
-          因为思念，所以即使路途遥远、一路艰辛，也要风尘仆仆赶到心上人身边。牵着她的手，仿佛得到了整个世界，时间也在刹那间停顿。时间已经不重要了，只要她开心，也会由着她的性子到处转转。节假日，人的海洋，摩肩擦踵，汗流浃背，也愿意在“资本主义世界的大门前”等待个把时辰。或者，在冷凝水乱洒的巴士上逐渐晕车，也要去市里玩耍。真好呐。曾经觉得，她在身边，灵魂都会被吸走；现在却发觉，原来她在身边，我才真正是“我”。
+          <p>因为思念，所以即使路途遥远、一路艰辛，也要风尘仆仆赶到心上人身边。牵着她的手，仿佛得到了整个世界，时间也在刹那间停顿。时间已经不重要了，只要她开心，也会由着她的性子到处转转。节假日，人的海洋，摩肩擦踵，汗流浃背，也愿意在“资本主义世界的大门前”等待个把时辰。或者，在冷凝水乱洒的巴士上逐渐晕车，也要去市里玩耍。真好呐。曾经觉得，她在身边，灵魂都会被吸走；现在却发觉，原来她在身边，我才真正是“我”。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/244dcfd3/#more" rel="contents">
@@ -708,6 +790,30 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>30</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -717,7 +823,8 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
     <div class="post-body" itemprop="articleBody">
 
       
-          查查财经类院校有什么硕士，然后看看都是读什么的，决定好以后的方向。
+          <p>查查财经类院校有什么硕士，然后看看都是读什么的，决定好以后的方向。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/e816e42d/#more" rel="contents">
@@ -789,6 +896,30 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>211</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -803,6 +934,7 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 <p>也需要配置SSL，在Crypto里调整，把第一条改成full（strict），因为服务器已经有了Lets的证书。下面的HSTS之类的开关看情况开。</p>
 <p>最后就是等了，等到cloudflare接管dns和ssl证书签完就可以了。再访问网站，所有的流量都会经过cloudflare的服务器了。</p>
 <p>安全当然是安全了一点，但是效果就是网站的速度变慢了，毕竟cloudflare的服务器在国外。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/30ce45c7/#more" rel="contents">
@@ -874,6 +1006,30 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>3</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -883,7 +1039,8 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
     <div class="post-body" itemprop="articleBody">
 
       
-          [2 [142 [282
+          <p>[2 [142 [282</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/d534213/#more" rel="contents">
@@ -955,6 +1112,30 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -964,7 +1145,8 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
     <div class="post-body" itemprop="articleBody">
 
       
-          [2
+          <p>[2</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/3f98989a/#more" rel="contents">
@@ -1036,6 +1218,30 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>435</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -1050,6 +1256,7 @@ Matcher的matches()方法只在整个String都匹配的时候才是true，如果
 <p>如果是专业之外的其他知识，比如她会的钢琴，我懂的电脑，同样的也是“翻译”。有时候聊天里就她会突然问“钢琴有一个踏板是用来降低声音的哦”然后让我猜，然后再告诉我答案。如果是我要给她解释一些电脑的道理的话，就要说一些生活化的例子，比如TCP的三次握手就要解释成“听见吗”的例子。</p>
 <p>思考的方式也会有不一样。不过比较经典就是了，她的思考方式比较文科，比较感性一点；我的思考方式比较“经济学”，“理性人”一点。</p>
 <p>其实很多感觉是混合了人的因素在里面的，毕竟恋爱是和人谈的，不是和专业谈的。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/f80c99a5/#more" rel="contents">

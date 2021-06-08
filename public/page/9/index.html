@@ -238,6 +238,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>335</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -251,6 +275,10 @@
 <h2 id="最简单的编译一个源文件的CMakeLists-txt"><a href="#最简单的编译一个源文件的CMakeLists-txt" class="headerlink" title="最简单的编译一个源文件的CMakeLists.txt"></a>最简单的编译一个源文件的CMakeLists.txt</h2><p>天才第一步，“Hello world”。写一个输出hello world的main.cc（这里用的是谷歌代码规范的命名规则）。然后同目录放一个包含以下内容的CMakeLists.txt：</p>
 <p>cmake_minimum_required (VERSION 2.6)</p>
 <p>project(helloworld)<br>add_executable(helloworld main.cc)</p>
+<p>第一行指示要求的cmake最低版本，没有也行；第二行是project名字；第三行是指示编译一个可执行文件helloworld涉及的源代码文件是main.cc。</p>
+<p>在这个目录下cmake .，cmake就会输出一个包含makefile的build文件夹，在build文件夹里make，就会输出可执行文件helloworld。</p>
+<p>这种叫做In-source build（虽然实际上已经有点out-source的感觉了）。</p>
+<h2 id="Out-Source-Build"><a href="#Out-Source-Build" class="headerlink" title="Out-Source Build"></a>Out-Source Build</h2><p>为了不污染源代码，首先把main.cc和CMakeLists.txt放到src文件夹里，然后在src文件夹同目录自己建一个build文件夹，然后build文件夹里cmake ../src，这样就把cmake生成的build需要的东西和源代码分开了。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/fb153907/#more" rel="contents">
@@ -322,6 +350,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>141</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -336,6 +388,8 @@
 <p><a name="后面要用到的名字">可能是一些要显示的文字</a></p>
 <p>然后就可以在后文中使用markdown语法来跳回来了：</p>
 <p>[回到上边](#后面要用到的名字)</p>
+<p>评论里说用id=也可以，尽可以试试。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/9cc1a1ed/#more" rel="contents">
@@ -411,6 +465,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>280</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -425,6 +503,11 @@
 <p>然后手动运行updater/updater.phar：</p>
 <p>sudo -u www-data php updater.phar</p>
 <p>它会提示你它会做什么，然后问你要不要继续，按y回车就会开始。</p>
+<p>如果一切顺利，就会问你要不要马上运行occ upgrade来完成升级维护，但是在我的配置里它调用的function被禁用了，所以只能手动运行occ，选n。</p>
+<p>然后会问是否保持维护模式打开，因为要手动运行occ，所以选y，然后updater就会退出了。</p>
+<p>回到网站根目录，完成occ upgrade：</p>
+<p>sudo -u www-data php occ upgrade</p>
+<p>等它做完事情就可以了，一般不会问其他东西的。最后把维护模式关掉：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/128b62e4/#more" rel="contents">
@@ -500,6 +583,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>197</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -520,6 +627,7 @@
 &quot;memcache.locking&quot;: &quot;\\\\OC\\\\Memcache\\\\Redis&quot;,
 </code></pre>
 <p>就是把config/config.php里面的三行关于OPcache的配置删掉 （如果配置了redis也把redis的删掉）。删了之后果然成功运行起来了。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/cded3a50/#more" rel="contents">
@@ -595,6 +703,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>274</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -609,6 +741,10 @@
 <p>其实程序很简单，因为有符号的就是无符号的一半大小，所以直接用无符号赋值-1就会溢出成最大数：</p>
 <p>uint8_t int8 = -1;<br>uint16_t int16 = -1;<br>uint32_t int32 = -1;<br>uint64_t int64 = -1;<br>uint_fast8_t fastint8 = -1;<br>uint_fast16_t fastint16 = -1;</p>
 <p>写的时候代码自动提示发现了一个带“fast”的类型，还挺神奇，标准上说这些类型是在这个处理器上运算最快的、至少有N位的类型，看输出结果就比较奇妙。</p>
+<p>输出结果依次是：</p>
+<p>uint8_t: 255<br>uint16_t: 65535<br>uint32_t: 4294967295<br>uint64_t: 18446744073709551615<br>uint_fast8_t: 255<br>uint_fast16_t: 4294967295</p>
+<p>可以见到在我的电脑上，fast8是普通的int8，而fast16却用了int32的类型。</p>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/256d0cdc/#more" rel="contents">
@@ -680,6 +816,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>73</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -689,11 +849,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          本质上是修改注册表，举例来说：
+          <p>本质上是修改注册表，举例来说：</p>
+<p>[Environment]::SetEnvironmentVariable(“PATH”, $env:Path + “;<new path>“, ‘User’)</new></p>
+<p>这是设置用户的环境变量“Path”，增量添加。因为是修改User的，所以不需要管理员权限。如果是修改全局的，把’User’改成’Machine’，就需要管理员权限。</p>
 
-[Environment]::SetEnvironmentVariable(“PATH”, $env:Path + “;“, ‘User’)
-
-这是设置用户的环境变量“Path”，增量添加。因为是修改User的，所以不需要管理员权限。如果是修改全局的，把’User’改成’Machine’，就需要管理员权限。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/825256f2/#more" rel="contents">
@@ -769,6 +928,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>197</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -787,6 +970,7 @@
 <li> 算法的class对象</li>
 <li> 计算Digest，第一个参数是算出来的东西写到哪里去，第二个参数就是计算的内容（byte指针形式给定），第三个是指明计算内容的长度（这里就是字符串长度）</li>
 </ol>
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/8cdec583/#more" rel="contents">
@@ -858,6 +1042,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>53</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -867,9 +1075,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          今日份的快乐，是获得了爸爸的一台显示器，接上笔记本之后把笔记本藏在显示器后边，舒服了很多呢。果然还是屏幕大比较好。
+          <p>今日份的快乐，是获得了爸爸的一台显示器，接上笔记本之后把笔记本藏在显示器后边，舒服了很多呢。果然还是屏幕大比较好。</p>
+<p>60</p>
 
-60
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/d385b7a/#more" rel="contents">
@@ -945,6 +1153,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>321</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -957,6 +1189,11 @@
           <span id="more"></span>
 <h1 id="iostream"><a href="#iostream" class="headerlink" title="iostream"></a>iostream</h1><h2 id="cin、cout"><a href="#cin、cout" class="headerlink" title="cin、cout"></a>cin、cout</h2><p>提供了<code>cout</code>和<code>cin</code>两个常用stream：</p>
 <p><code>cin</code>：char input流</p>
+<p><code>cout</code>：char output流</p>
+<p>string str;<br>cout &lt;&lt; “Say something”;<br>cin &gt;&gt; str;<br>cout &lt;&lt; “Hi, “ &lt;&lt; str &lt;&lt; “, nice\n”;</p>
+<p>读入（&gt;&gt;）的时候会自动根据变量类型读入需要的东西</p>
+<p>&gt;&gt;可以连续整：</p>
+<p>string a;<br>string b;<br>cin &gt;&gt; a &gt;&gt; b;</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/bc820433/#more" rel="contents">
@@ -1032,6 +1269,30 @@
 
           
 
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>83</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
         </div>
       </header>
 
@@ -1041,15 +1302,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          今天突发奇想想要在linux上实现模拟鼠标右键按住的效果。linux上用按键精灵就完事了，linux上用的是xdotool，看man就知道，比如需要右键按住，就是
+          <p>今天突发奇想想要在linux上实现模拟鼠标右键按住的效果。linux上用按键精灵就完事了，linux上用的是xdotool，看man就知道，比如需要右键按住，就是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xdotool mousedown 3</span><br></pre></td></tr></table></figure>
 
-1
+<p>但是mousedown不支持delay，所以需要写成script，在前面加一句sleep来实现延时。</p>
 
-
-xdotool mousedown 3
-
-
-但是mousedown不支持delay，所以需要写成script，在前面加一句sleep来实现延时。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/130f9995/#more" rel="contents">

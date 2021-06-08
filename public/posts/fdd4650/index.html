@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="今天用linux下的vscode，通过gdb和lldb做debug，在单点调试的时候总是会在new一个对象的时候报错，表示找不到libstdc++-v3之类的文件在哪，没法debug。解决这个问题的办法之一是把&#x2F;usr&#x2F;lib&#x2F;libstdc++.so.6的debug symbol给strip了，debug的时候就不会尝试去解析标准库了，问题就解决。  由于strip会导致很多应用崩掉，所以建议在">
+  <meta name="description" content="今天用linux下的vscode，通过gdb和lldb做debug，在单点调试的时候总是会在new一个对象的时候报错，表示找不到libstdc++-v3之类的文件在哪，没法debug。解决这个问题的办法之一是把&#x2F;usr&#x2F;lib&#x2F;libstdc++.so.6的debug symbol给strip了，debug的时候就不会尝试去解析标准库了，问题就解决。 由于strip会导致很多应用崩掉，所以建议在t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vscode的libstdc++的debug问题">
 <meta property="og:url" content="https://blog.huaj.tk/posts/fdd4650/index.html">
 <meta property="og:site_name" content="Nugo">
-<meta property="og:description" content="今天用linux下的vscode，通过gdb和lldb做debug，在单点调试的时候总是会在new一个对象的时候报错，表示找不到libstdc++-v3之类的文件在哪，没法debug。解决这个问题的办法之一是把&#x2F;usr&#x2F;lib&#x2F;libstdc++.so.6的debug symbol给strip了，debug的时候就不会尝试去解析标准库了，问题就解决。  由于strip会导致很多应用崩掉，所以建议在">
+<meta property="og:description" content="今天用linux下的vscode，通过gdb和lldb做debug，在单点调试的时候总是会在new一个对象的时候报错，表示找不到libstdc++-v3之类的文件在哪，没法debug。解决这个问题的办法之一是把&#x2F;usr&#x2F;lib&#x2F;libstdc++.so.6的debug symbol给strip了，debug的时候就不会尝试去解析标准库了，问题就解决。 由于strip会导致很多应用崩掉，所以建议在t">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-05T17:28:42.000Z">
 <meta property="article:modified_time" content="2021-06-08T07:07:46.512Z">
@@ -237,6 +237,30 @@
             </span>
 
           
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>144</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
 
         </div>
       </header>
