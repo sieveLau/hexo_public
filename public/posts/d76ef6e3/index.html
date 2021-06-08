@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/site.webmanifest">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="技术基础与金融创新互联网最初：网间网 始于：69.12，军用部门阿帕网；70年开放给非军用 83：NCP协议改成TCP&#x2F;IP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="互联网金融-课堂笔记">
+<meta property="og:url" content="https://blog.huaj.tk/posts/d76ef6e3/index.html">
+<meta property="og:site_name" content="Nugo">
+<meta property="og:description" content="技术基础与金融创新互联网最初：网间网 始于：69.12，军用部门阿帕网；70年开放给非军用 83：NCP协议改成TCP&#x2F;IP">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-02-27T15:29:39.000Z">
+<meta property="article:modified_time" content="2021-06-08T06:41:16.343Z">
+<meta property="article:author" content="Sieve Lau">
+<meta property="article:tag" content="课堂笔记">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://blog.huaj.tk/posts/d76ef6e3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>互联网金融-课堂笔记 | Nugo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Nugo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/d76ef6e3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Sieve Lau">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nugo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          互联网金融-课堂笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-27 23:29:39" itemprop="dateCreated datePublished" datetime="2019-02-27T23:29:39+08:00">2019-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-08 14:41:16" itemprop="dateModified" datetime="2021-06-08T14:41:16+08:00">2021-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="技术基础与金融创新"><a href="#技术基础与金融创新" class="headerlink" title="技术基础与金融创新"></a>技术基础与金融创新</h1><h2 id="互联网"><a href="#互联网" class="headerlink" title="互联网"></a>互联网</h2><p>最初：网间网</p>
+<p>始于：69.12，军用部门阿帕网；70年开放给非军用</p>
+<p>83：NCP协议改成TCP/IP</p>
+<p>86年：NSF建立NSFnet，公众开放（主干网前身）</p>
+<p>91年：万维网</p>
+<p>互联网功能：</p>
+<ol>
+<li> 信息传递和数据交换</li>
+<li> 资源共享——减少用户的投资，提高大型数据中心的利用率</li>
+<li> 提高计算能力——分布式计算</li>
+<li> 搜索匹配功能（搜索引擎）</li>
+</ol>
+<p>互联网本质：</p>
+<ol>
+<li> 连接——通讯渠道</li>
+<li> 协议和规定——TPC/IP</li>
+<li> 服务</li>
+<li> 人脑的外延——思维活动的外在体现</li>
+</ol>
+<h2 id="互联网金融"><a href="#互联网金融" class="headerlink" title="互联网金融"></a>互联网金融</h2><p>互金定义：因为互联网技术和互联网精神的影响，从传统银行、证券、保险等金融中介和市场，到瓦尔拉斯一般均衡对应的无金融中介或市场情形之间的所有金融交易和组织形式的总称</p>
+<p>互联网精神：开放、包容、平等、协作、分享。</p>
+<p>瓦尔拉斯一般均衡：整个市场上过度需求与过剩供给的总额必定相等的情况。</p>
+<p>互联网金融实际上是一个基础设施而不是金融中介。……基于互联网技术平台基础的金融活动、金融形式等的总和</p>
+<p>特征：服务成本低、网络效应显著、信贷双方搜寻匹配效率高</p>
+<p>属性：</p>
+<ol>
+<li> 技术属性</li>
+<li> 金融属性（利用互联网技术更好发挥金融的功能、交易契约关系没有改变）</li>
+</ol>
+<h2 id="互联网金融的范围"><a href="#互联网金融的范围" class="headerlink" title="互联网金融的范围"></a>互联网金融的范围</h2><h3 id="纯互联网金融机构"><a href="#纯互联网金融机构" class="headerlink" title="纯互联网金融机构"></a>纯互联网金融机构</h3><ol>
+<li> 互联网银行（拥有商业银行牌照，业务依靠后台，没有营业柜台）（经营成本低，服务创新快）（网络安全问题，技术条件限制，传统观念排斥）</li>
+<li> 互联网证券公司（对物理网点依赖低；多数从传统证券公司演变而来）（促进证券市场的规模扩张（客户进入门槛降低）；信息传播过程更有效率；促进差异化竞争）</li>
+<li> 互联网保险（众安保险）（客户自主选择，抵触降低；服务高效）</li>
+</ol>
+<h3 id="电子商务类"><a href="#电子商务类" class="headerlink" title="电子商务类"></a>电子商务类</h3><p>为交易双方提供服务：第三方支付，网络小贷；供应链金融；网络消费金融</p>
+<h3 id="科技类"><a href="#科技类" class="headerlink" title="科技类"></a>科技类</h3><p>从支付开始；搭建商品销售和资金收付平台；与银行和商户合作，进入到个人小额支付市场（如腾讯支付）</p>
+<h3 id="民间投资服务类"><a href="#民间投资服务类" class="headerlink" title="民间投资服务类"></a>民间投资服务类</h3><p>类金融企业：金融信息服务、投资、投资咨询</p>
+<p>网络借贷平台：P2P网络交易服务</p>
+<p>众筹平台，为小型众筹项目提供平台服务</p>
+<p>专业金融信息网站：互联网金融信息，基金产品销售等</p>
+<h2 id="互联网金融的基础设施"><a href="#互联网金融的基础设施" class="headerlink" title="互联网金融的基础设施"></a>互联网金融的基础设施</h2><h3 id="金融大数据系统"><a href="#金融大数据系统" class="headerlink" title="金融大数据系统"></a>金融大数据系统</h3><p>基于大数据的服务创新：依据客户资金流、信用、行为习惯等开发产品</p>
+<p>基于大数据的风险控制：前期信用调查，中期授信，后期信用管理</p>
+<h3 id="互联网征信"><a href="#互联网征信" class="headerlink" title="互联网征信"></a>互联网征信</h3><p>狭义：采集个人或企业在互联网交易或使用互联网服务中留下的行为数据来进行信息评估的活动</p>
+<p>广义：狭义加上线下渠道采集的公共信息</p>
+<h3 id="金融区块链"><a href="#金融区块链" class="headerlink" title="金融区块链"></a>金融区块链</h3><p>去中心化的数据储存和传输方法。——分布式记账法</p>
+<h3 id="其他金融科技"><a href="#其他金融科技" class="headerlink" title="其他金融科技"></a>其他金融科技</h3><p>物联网技术、人工智能技术等</p>
+<p>物联网的核心是创新，可以拓展金融服务空间、扩大金融服务市场范围</p>
+<p>人工智能应用于银行服务、证券投资顾问等有效提高效率</p>
+<h1 id="互联网金融发展"><a href="#互联网金融发展" class="headerlink" title="互联网金融发展"></a>互联网金融发展</h1><h2 id="互联网金融实践创新探索与发展"><a href="#互联网金融实践创新探索与发展" class="headerlink" title="互联网金融实践创新探索与发展"></a>互联网金融实践创新探索与发展</h2><p>金融机构互联网应用的回顾：</p>
+<ol>
+<li> 银行业：70到90,银行全面电子化；90中期到现在，网络银行时代（02年银联成立，14年出现首批纯互联网银行）</li>
+<li> 证券业：97.3国内第一个多媒体公众信息望网上交易系统</li>
+<li> 保险业：97年第一个第三方保险网站中国保险信息网产生；13年众安保险</li>
+</ol>
+<p>非金融企业：</p>
+<ol>
+<li> 第三方支付：98年paypal，04年支付宝；10年才出现管理办法（支付业务许可证）；15、16年规制迅速完善</li>
+<li> P2P平台：05年全球第一家英国的；07年拍拍贷——我国出现；16年国务院决定进行专项整治（易租宝）</li>
+<li> 众筹：以货币捐赠或以换取未来的产品、服务或股权的形式为特定项目、企业提供金融支持的融资手段：03年全球第一家ArtistShare，11年中国首家“点名时间”</li>
+<li> 互联网金融门户：利用互联网进行金融产品销售以及为金融产品销售提供第三方服务的平台，同时是资讯平台，核心是搜索+比价；分类：第三方咨询平台、垂直搜索平台、在线金融超市</li>
+</ol>
+<h2 id="发展的推动因素"><a href="#发展的推动因素" class="headerlink" title="发展的推动因素"></a>发展的推动因素</h2><ol>
+<li> 互联网技术……电子化</li>
+<li> 云技术……提供算力</li>
+<li> 算法与数据处理技术：算法改进可以提升数据挖掘的效果；数据处理对象由结构数据向半结构和非结构数据变化，CPU转GPU</li>
+<li> 应用需求：经济活动支付需求（安全、便捷、用户体验）；网络直接融资（中小型企业、个人，信息不对称）；财富管理需求</li>
+<li> 规避监管创新：网贷平台的本质是影子银行；躲开准备金要求；</li>
+<li> 监管缺位：互联网金融的开放性和交叉性降低了进入门槛；机构监管的模式下对互联网金融的属性的难认定导致监管缺位</li>
+<li> 监管套利：利用不同的监管机构制定的不同规则甚至是相互冲突的规则来降低监管成本</li>
+</ol>
+<h2 id="发展趋势"><a href="#发展趋势" class="headerlink" title="发展趋势"></a>发展趋势</h2><ol>
+<li> 垂直化：利用互联网迅速整合各个领域的业务；对市场进行细分，根据细分市场的特点设计对应的产品</li>
+<li> 普惠化：降低交易成本和准入门槛、降低信息不对称，低成本呢获得金融服务</li>
+<li> 技术导向：互联网金融加强新技术的应用，解决好信息不对称、融资搜寻匹配等金融基本问题</li>
+</ol>
+<h1 id="金融科技发展的推动力"><a href="#金融科技发展的推动力" class="headerlink" title="金融科技发展的推动力"></a>金融科技发展的推动力</h1><h2 id="金融发展与技术进步"><a href="#金融发展与技术进步" class="headerlink" title="金融发展与技术进步"></a>金融发展与技术进步</h2><ol>
+<li> 金融发展推进技术进步：把资金配置给最有创新能力的企业，从而促进科技创新；吧流动资金转换成非流动的资本（闲散资金的集中）</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Sieve Lau
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.huaj.tk/posts/d76ef6e3/" title="互联网金融-课堂笔记">https://blog.huaj.tk/posts/d76ef6e3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" rel="tag"># 课堂笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/c83fa2eb/" rel="prev" title="今日平常无事">
+      <i class="fa fa-chevron-left"></i> 今日平常无事
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/548ad621/" rel="next" title="NTP时间同步">
+      NTP时间同步 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E4%B8%8E%E9%87%91%E8%9E%8D%E5%88%9B%E6%96%B0"><span class="nav-number">1.</span> <span class="nav-text">技术基础与金融创新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91"><span class="nav-number">1.1.</span> <span class="nav-text">互联网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E9%87%91%E8%9E%8D"><span class="nav-number">1.2.</span> <span class="nav-text">互联网金融</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E9%87%91%E8%9E%8D%E7%9A%84%E8%8C%83%E5%9B%B4"><span class="nav-number">1.3.</span> <span class="nav-text">互联网金融的范围</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%AF%E4%BA%92%E8%81%94%E7%BD%91%E9%87%91%E8%9E%8D%E6%9C%BA%E6%9E%84"><span class="nav-number">1.3.1.</span> <span class="nav-text">纯互联网金融机构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E7%B1%BB"><span class="nav-number">1.3.2.</span> <span class="nav-text">电子商务类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%91%E6%8A%80%E7%B1%BB"><span class="nav-number">1.3.3.</span> <span class="nav-text">科技类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%91%E9%97%B4%E6%8A%95%E8%B5%84%E6%9C%8D%E5%8A%A1%E7%B1%BB"><span class="nav-number">1.3.4.</span> <span class="nav-text">民间投资服务类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E9%87%91%E8%9E%8D%E7%9A%84%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="nav-number">1.4.</span> <span class="nav-text">互联网金融的基础设施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%91%E8%9E%8D%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.4.1.</span> <span class="nav-text">金融大数据系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E5%BE%81%E4%BF%A1"><span class="nav-number">1.4.2.</span> <span class="nav-text">互联网征信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%91%E8%9E%8D%E5%8C%BA%E5%9D%97%E9%93%BE"><span class="nav-number">1.4.3.</span> <span class="nav-text">金融区块链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80"><span class="nav-number">1.4.4.</span> <span class="nav-text">其他金融科技</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E9%87%91%E8%9E%8D%E5%8F%91%E5%B1%95"><span class="nav-number">2.</span> <span class="nav-text">互联网金融发展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E9%87%91%E8%9E%8D%E5%AE%9E%E8%B7%B5%E5%88%9B%E6%96%B0%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%8F%91%E5%B1%95"><span class="nav-number">2.1.</span> <span class="nav-text">互联网金融实践创新探索与发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E7%9A%84%E6%8E%A8%E5%8A%A8%E5%9B%A0%E7%B4%A0"><span class="nav-number">2.2.</span> <span class="nav-text">发展的推动因素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF"><span class="nav-number">2.3.</span> <span class="nav-text">发展趋势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80%E5%8F%91%E5%B1%95%E7%9A%84%E6%8E%A8%E5%8A%A8%E5%8A%9B"><span class="nav-number">3.</span> <span class="nav-text">金融科技发展的推动力</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%91%E8%9E%8D%E5%8F%91%E5%B1%95%E4%B8%8E%E6%8A%80%E6%9C%AF%E8%BF%9B%E6%AD%A5"><span class="nav-number">3.1.</span> <span class="nav-text">金融发展与技术进步</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sieve Lau"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Sieve Lau</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">180</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sieveLau" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sieveLau" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sievelau@gmail.com" title="E-Mail → mailto:sievelau@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sieve Lau</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

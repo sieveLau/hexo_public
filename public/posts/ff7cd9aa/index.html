@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/site.webmanifest">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="电子商务概论B2B B2C B2E：企业-员工 EDI：电子数据交换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电子商务概论-课堂笔记">
+<meta property="og:url" content="https://blog.huaj.tk/posts/ff7cd9aa/index.html">
+<meta property="og:site_name" content="Nugo">
+<meta property="og:description" content="电子商务概论B2B B2C B2E：企业-员工 EDI：电子数据交换">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-02T13:16:31.000Z">
+<meta property="article:modified_time" content="2021-06-08T06:41:16.397Z">
+<meta property="article:author" content="Sieve Lau">
+<meta property="article:tag" content="课堂笔记">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://blog.huaj.tk/posts/ff7cd9aa/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>电子商务概论-课堂笔记 | Nugo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Nugo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/ff7cd9aa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Sieve Lau">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nugo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          电子商务概论-课堂笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-02 21:16:31" itemprop="dateCreated datePublished" datetime="2019-03-02T21:16:31+08:00">2019-03-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-08 14:41:16" itemprop="dateModified" datetime="2021-06-08T14:41:16+08:00">2021-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="电子商务概论"><a href="#电子商务概论" class="headerlink" title="电子商务概论"></a>电子商务概论</h1><p>B2B</p>
+<p>B2C</p>
+<p>B2E：企业-员工</p>
+<p>EDI：电子数据交换</p>
+<p>E2E：交易所对交易所</p>
+<p>Group purchasing: 团购</p>
+<p>Inter-organizational information systems：跨组织信息系统</p>
+<p>Tendering：投标</p>
+<p>定义：利用电子化手段来进行产品、服务与信息的交换以及买卖、销售、转换的过程（强调了企业间、企业消费者间的买卖活动）</p>
+<p>电子商务主要包括跨越企业边界的交易。</p>
+<p>e-Business（电子业务）：企业内部的电子化交易和处理流程，包括客户服务、商业伙伴的协同、组织内信息交换</p>
+<p>特点：</p>
+<ol>
+<li><p>普遍存在性：依赖网络</p>
+<ol>
+<li> 降低交易成本、认知经历消耗</li>
+</ol>
+</li>
+<li><p>影响范围遍及全球</p>
+</li>
+<li><p>通用标准：基于互联网技术通用标准，降低市场进入成本、消费者搜索成本</p>
+</li>
+<li><p>丰富性</p>
+<ol>
+<li> 信息丰富性（多媒体</li>
+<li> 丰富性和影响范围互相制约</li>
+</ol>
+</li>
+<li><p>交互性：双向沟通，B2C和C2C同时存在</p>
+</li>
+<li><p>信息密度</p>
+<ol>
+<li> 提高及时性、准确性</li>
+<li> 提升价格、成本的透明度</li>
+</ol>
+</li>
+<li><p>个性化（依赖于交互性和信息密度）</p>
+<ol>
+<li> 根据ID等标记调整提供的信息</li>
+<li> 定制化：消费者根据偏好事先调整商品选项</li>
+</ol>
+</li>
+<li><p>完全的和不完全的电子商务</p>
+</li>
+<li><p>三维度：订购支付、订单实施（制作）、产品配送</p>
+<ol>
+<li> 全电子化：纯电子商务</li>
+<li> 虚拟业务组织、鼠标+水泥组织（混合）、砖头+水泥组织（传统）</li>
+<li> 电子市场、跨组织信息系统（基于EDI在两个或以上的组织间进行）、组织内部信息系统</li>
+<li> B2C模型：消费者利用Internet提供的双向交互通信与网上商店进行信息交互完成购物的过程（过时）</li>
+<li> C2C模型：消费者之间自由贸易</li>
+<li> B2B2C：小企业给拥有客户的企业提供产品</li>
+<li> C2B：集体议价</li>
+<li> O2O：</li>
+</ol>
+</li>
+</ol>
+<h2 id="电子商务框架"><a href="#电子商务框架" class="headerlink" title="电子商务框架"></a>电子商务框架</h2><ol>
+<li>基础设施<ol>
+<li> 普通商务服务基础设施</li>
+<li> 信息发布基础设施</li>
+<li> 多媒体和网络出版基础设施</li>
+<li> 网络基础设施</li>
+<li> 接口基础设施</li>
+</ol>
+</li>
+<li>支持服务<ol>
+<li> 人（买方卖方）</li>
+<li> 公共政策（税收法律等）</li>
+<li> 营销和广告（市场调研、促销、网页内容等）</li>
+<li> 支持服务（订单履行、物流、支付）</li>
+<li> 企业合作关系</li>
+</ol>
+</li>
+</ol>
+<h2 id="电子商务类型"><a href="#电子商务类型" class="headerlink" title="电子商务类型"></a>电子商务类型</h2><p>B2C，企业与消费者，电子零售</p>
+<p>C2C，本质是网上拍卖，消费者之间的交易</p>
+<p>企业内部电子商务</p>
+<p>基于位置的移动商务（L-commerce）</p>
+<p>企业对员工</p>
+<p>协同商务</p>
+<p>电子学习</p>
+<p>电子政务</p>
+<p>E2E，交易所对交易所</p>
+<p>非商业电子商务：降低运营费用</p>
+<p><em>转向多元结构：</em></p>
+<p>B2B2C、C2B等</p>
+<h3 id="创新和衍生模型"><a href="#创新和衍生模型" class="headerlink" title="创新和衍生模型"></a>创新和衍生模型</h3><p>O2O（Online to Offline），利用物流等方法将线下商务的机会与互联网的技术结合在一起，给线下交易进行推广和成交。</p>
+<h2 id="发展简史"><a href="#发展简史" class="headerlink" title="发展简史"></a>发展简史</h2><h3 id="B2B雏形"><a href="#B2B雏形" class="headerlink" title="B2B雏形"></a>B2B雏形</h3><p>70年代末BH制药，创建了远程订单录入系统（单点的）</p>
+<p>80年代EDI：连接数据</p>
+<p>EFT：局限于大公司和金融等</p>
+<h3 id="B2C雏形"><a href="#B2C雏形" class="headerlink" title="B2C雏形"></a>B2C雏形</h3><p>81年法国电信集团minitel系统（到06年），提供视频和文本功能（先驱系统，不是互联网的）</p>
+<p>94年AT&amp;T等94年10月开始网络广告</p>
+<p>95年开始真正商业化</p>
+<ol>
+<li> 95-00，变革期，眼球经济，比赚取利润更重要——快速做大、先发优势的投资理念（00年互联网企业股价崩盘为结束）</li>
+<li> 01-06，技术导向至商务导向，传统企业也学会使用互联网加强市场地位、巩固品牌</li>
+<li> 06至今：再定义：谷歌推动社会化电子商务；再定义包括互联网技术的延伸、基于用户生成内容和社交网络的新商业模式</li>
+</ol>
+<h2 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h2><p>吸引了消费者，提高了销售额，培养了电子商务购物模式</p>
+<p>单一市场、统一价格的“无摩擦”完全竞争并没有出现：消费者对价格敏感性不如预期、收入高的网站价格最高、同一产品的价格离散度高、搜索成本降低但是交易成本依然高（物流仓储等）；商家找到了区分产品和服务的模式</p>
+<p>先发有时只在少数网站的得以体现</p>
+<p>早期的电子商务实践为中间商转型创造机会：从批发转成广告、信息服务平台</p>
+<h2 id="电子商务商业模式"><a href="#电子商务商业模式" class="headerlink" title="电子商务商业模式"></a>电子商务商业模式</h2><p>竞争不再是产品、广告等的单一要素较量，能获取明显竞争优势的竞争时商业模式的比拼</p>
+<p>商业模式的定义：企业为获取收入以维持经营而开展业务的模式，或从市场上获得利润而预先规划好的一系列活动（要关注竞争态势）</p>
+<p>商业模式决定了企业在价值链中的位置，企业通过何种活动为它所提供的产品和服务创造价值</p>
+<p>功能：</p>
+<ol>
+<li> 清楚表明客户的价值主张（市场的痛点在哪里）</li>
+<li> 识别细分市场（谁将使用这种技术，出于什么目的）（盈利空间）</li>
+<li> 确定企业特定的价值链结构</li>
+<li> 估计成本结构和获利的可能性</li>
+<li> 描述企业在与供应商、客户相连的价值网络中所处的位置</li>
+<li> 制定企业的竞争策略</li>
+</ol>
+<p>要素</p>
+<ol>
+<li>价值主张（为什么要帮衬你）<ol>
+<li>核心，明确一家企业的产品或服务如何满足客户的需求</li>
+<li>消费者角度的VP：<ol>
+<li> 个性化定制</li>
+<li> 降低搜索成本</li>
+<li> 降低价格发现成本</li>
+<li> 通过交付管理使交易更加便捷</li>
+</ol>
+</li>
+<li>怎么创造价值：<ol>
+<li> 搜索和交易的成本效率：</li>
+<li> 互补性：产品和服务一起销售&gt;产品提供的价值</li>
+<li> 锁定效应：转换其他供应商成本高</li>
+<li> 新奇性</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>盈利模式</li>
+<li>市场机会（服务什么市场，容量多大）</li>
+<li>竞争环境（哪些企业的目标市场与你相同）<ol>
+<li> 在统一市场中运作、销售相似产品的其他企业，替代产品的存在和进入市场的新途径</li>
+</ol>
+</li>
+<li>竞争优势（有什么优势）<ol>
+<li> 总能获得竞争对手所无法获得的各种要素——不对称优势</li>
+<li> 先发优势……先发者缺少保持优势的互补资源；先发者可以从先驱企业的的失败中学习经验而更快回报</li>
+<li> 杠杆作用：利用已有竞争优势在周围市场中也获得更多的竞争优势</li>
+</ol>
+</li>
+<li>营销战略（怎么宣传和让更多消费者知道）</li>
+<li>组织发展（使用哪种组织架构）</li>
+<li>管理团队</li>
+</ol>
+<p>典型的：</p>
+<ol>
+<li>电子招标系统</li>
+<li>自行定价（允许买方设定价格）<ol>
+<li> 节约交易成本（节约议价成本）</li>
+<li> 保护品牌调性</li>
+</ol>
+</li>
+<li>结盟营销<ol>
+<li> 营销参与者与公司达成协议，推荐消费者到该公司的网站购买服务或产品</li>
+</ol>
+</li>
+<li>病毒营销<ol>
+<li> 网络口碑</li>
+</ol>
+</li>
+<li>团购</li>
+<li>在线拍卖</li>
+<li>定制</li>
+<li>电子市场</li>
+<li>供应链改善者</li>
+</ol>
+<h3 id="商业模式变化轨迹"><a href="#商业模式变化轨迹" class="headerlink" title="商业模式变化轨迹"></a>商业模式变化轨迹</h3><p>第一阶段：羊毛就是羊毛价，卖方规定价格消费者就要接受</p>
+<p>第二阶段：羊毛出在羊身上，免费停车优惠买一赠一等</p>
+<p>第三阶段：羊毛出在猪身上，低价策略但是只有会员才能消费；商家拿着会员的会员价来进行投资</p>
+<p>第四阶段：羊毛出在狗身上，猪来买单</p>
+<h2 id="电子商务的好处"><a href="#电子商务的好处" class="headerlink" title="电子商务的好处"></a>电子商务的好处</h2><p>……</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>侵权、盗版等</p>
+<h1 id="电子市场"><a href="#电子市场" class="headerlink" title="电子市场"></a>电子市场</h1><h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>Avatars</p>
+<p>化身</p>
+<p>Back end</p>
+<p> </p>
+<p>Electronic catalog</p>
+<p> </p>
+<p>Portal</p>
+<p> </p>
+<h3 id="Zulily经验"><a href="#Zulily经验" class="headerlink" title="Zulily经验"></a>Zulily经验</h3><ol>
+<li> 限时特卖“闪购”</li>
+<li> 专注母婴产品</li>
+<li> 扶持小品牌</li>
+<li> 个性化需求</li>
+<li> 零库存管理</li>
+<li> 发货周期长、不支持退货</li>
+</ol>
+<h2 id="电子市场-1"><a href="#电子市场-1" class="headerlink" title="电子市场"></a>电子市场</h2><p>进行电子商务交易的主要场所，是一个虚拟的市场</p>
+<p>功能：</p>
+<ol>
+<li>匹配卖方、买方（甚至是多方交易）<ol>
+<li> 决定需要提供的产品买方提供的产品功能不同产品的集成</li>
+<li> 搜索、价格和产品信息、组织招投标</li>
+</ol>
+</li>
+<li>促进信息、产品、服务的交换、与市场相关的支付</li>
+<li>提供制度上的基础架构（法制框架等等）</li>
+</ol>
+<h3 id="技术驱动导致的结果："><a href="#技术驱动导致的结果：" class="headerlink" title="技术驱动导致的结果："></a>技术驱动导致的结果：</h3><ol>
+<li> 丰富的交易和相关环境的信息</li>
+<li> 买卖双方的地理位置已经不重要了（存疑）</li>
+<li> 相对买方耕地的信息获取代价</li>
+<li> 减少了买卖双方的信息不对称</li>
+</ol>
+<h2 id="电子市场的要素和参与者"><a href="#电子市场的要素和参与者" class="headerlink" title="电子市场的要素和参与者"></a>电子市场的要素和参与者</h2><ol>
+<li> 消费者</li>
+<li> 商家</li>
+<li> 产品和服务（匹配供需两头）——</li>
+<li> 基础设施</li>
+<li> 前端（消费者与市场的互动）</li>
+<li> 后端（处理请求）</li>
+<li> 中介和商业伙伴</li>
+</ol>
+<p>支付性服务</p>
+<p>线下与线上市场的区别是虚拟化程度和基础设施</p>
+<h2 id="市场空间组建"><a href="#市场空间组建" class="headerlink" title="市场空间组建"></a>市场空间组建</h2><ol>
+<li>前端<ol>
+<li> 卖家portal</li>
+<li> 电子目录</li>
+<li> 购物车</li>
+<li> 搜索引擎</li>
+<li> 支付门户</li>
+</ol>
+</li>
+<li>后端<ol>
+<li> 订单完成和集合</li>
+<li> 包装和快递</li>
+<li> 支付环节</li>
+<li> 仓储管理</li>
+</ol>
+</li>
+<li>中介：（区别于wholesale是创建和管理线上市场）大多数是计算机化系统</li>
+<li>其他商业伙伴</li>
+<li>支持服务：<ol>
+<li> 证书和认证服务</li>
+<li> 智囊团</li>
+<li> BBB online，产品质量和信用担保</li>
+</ol>
+</li>
+</ol>
+<h2 id="电子市场类型"><a href="#电子市场类型" class="headerlink" title="电子市场类型"></a>电子市场类型</h2><ol>
+<li>B2c：<ol>
+<li>Store（店铺<ol>
+<li> 一个公司的在线销售平台——可以是平台搭建也可以是自己搭建</li>
+</ol>
+</li>
+<li>Mall<ol>
+<li> 子单元就是Store</li>
+</ol>
+</li>
+<li>Avatars（SecondLife.com）</li>
+</ol>
+</li>
+<li>B2B<ol>
+<li> Sell-side</li>
+<li> Buy-siede</li>
+<li> Exchange</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Sieve Lau
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.huaj.tk/posts/ff7cd9aa/" title="电子商务概论-课堂笔记">https://blog.huaj.tk/posts/ff7cd9aa/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" rel="tag"># 课堂笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/548ad621/" rel="prev" title="NTP时间同步">
+      <i class="fa fa-chevron-left"></i> NTP时间同步
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/7b51a00c/" rel="next" title="今日小记">
+      今日小记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E6%A6%82%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">电子商务概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E6%A1%86%E6%9E%B6"><span class="nav-number">1.1.</span> <span class="nav-text">电子商务框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">电子商务类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E6%96%B0%E5%92%8C%E8%A1%8D%E7%94%9F%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">创新和衍生模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E7%AE%80%E5%8F%B2"><span class="nav-number">1.3.</span> <span class="nav-text">发展简史</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#B2B%E9%9B%8F%E5%BD%A2"><span class="nav-number">1.3.1.</span> <span class="nav-text">B2B雏形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B2C%E9%9B%8F%E5%BD%A2"><span class="nav-number">1.3.2.</span> <span class="nav-text">B2C雏形</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7"><span class="nav-number">1.4.</span> <span class="nav-text">评价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">电子商务商业模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E5%8F%98%E5%8C%96%E8%BD%A8%E8%BF%B9"><span class="nav-number">1.5.1.</span> <span class="nav-text">商业模式变化轨迹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">1.6.</span> <span class="nav-text">电子商务的好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">1.7.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%B8%82%E5%9C%BA"><span class="nav-number">2.</span> <span class="nav-text">电子市场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AF%E8%AF%AD"><span class="nav-number">2.1.</span> <span class="nav-text">术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Zulily%E7%BB%8F%E9%AA%8C"><span class="nav-number">2.1.1.</span> <span class="nav-text">Zulily经验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%B8%82%E5%9C%BA-1"><span class="nav-number">2.2.</span> <span class="nav-text">电子市场</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E9%A9%B1%E5%8A%A8%E5%AF%BC%E8%87%B4%E7%9A%84%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-number">2.2.1.</span> <span class="nav-text">技术驱动导致的结果：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%B8%82%E5%9C%BA%E7%9A%84%E8%A6%81%E7%B4%A0%E5%92%8C%E5%8F%82%E4%B8%8E%E8%80%85"><span class="nav-number">2.3.</span> <span class="nav-text">电子市场的要素和参与者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%82%E5%9C%BA%E7%A9%BA%E9%97%B4%E7%BB%84%E5%BB%BA"><span class="nav-number">2.4.</span> <span class="nav-text">市场空间组建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%B8%82%E5%9C%BA%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.5.</span> <span class="nav-text">电子市场类型</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sieve Lau"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Sieve Lau</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">180</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sieveLau" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sieveLau" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sievelau@gmail.com" title="E-Mail → mailto:sievelau@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sieve Lau</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
