@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.huaj.tk/posts/a33b293c/</loc>
+    
+    <lastmod>2021-06-08</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.huaj.tk/posts/b0259f03/</loc>
     
     <lastmod>2021-06-08</lastmod>
@@ -1052,13 +1059,6 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/posts/a33b293c/</loc>
-    
-    <lastmod>2021-06-08</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.huaj.tk/posts/53bb2d32/</loc>
     
     <lastmod>2021-06-08</lastmod>
@@ -1593,6 +1593,27 @@
   </url>
   
   <url>
+    <loc>https://blog.huaj.tk/tags/asn/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/tags/ip/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/tags/ip-cidr/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.huaj.tk/tags/smb/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1628,27 +1649,6 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/tags/asn/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/tags/ip/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/tags/ip-cidr/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.huaj.tk/tags/firefox/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1663,6 +1663,13 @@
   </url>
   
   <url>
+    <loc>https://blog.huaj.tk/tags/hexo/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.huaj.tk/tags/git/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
@@ -1671,13 +1678,6 @@
   
   <url>
     <loc>https://blog.huaj.tk/tags/gogs/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/tags/hexo/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2202,20 +2202,6 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/tags/markdown/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.huaj.tk/tags/%E7%90%90%E4%BA%8B/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
@@ -2237,7 +2223,14 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/tags/%E6%91%84%E5%BD%B1/</loc>
+    <loc>https://blog.huaj.tk/tags/markdown/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2245,6 +2238,13 @@
   
   <url>
     <loc>https://blog.huaj.tk/tags/%E5%A4%8F%E5%88%9D/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/tags/%E6%91%84%E5%BD%B1/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2538,6 +2538,20 @@
   </url>
   
   <url>
+    <loc>https://blog.huaj.tk/tags/cmake/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.huaj.tk/tags/java/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
@@ -2581,20 +2595,6 @@
   
   <url>
     <loc>https://blog.huaj.tk/tags/maven/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/tags/cmake/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2657,13 +2657,6 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/tags/%E5%A4%A7%E5%AD%A6%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.huaj.tk/tags/%E5%87%BA%E8%A1%8C/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
@@ -2679,6 +2672,13 @@
   
   <url>
     <loc>https://blog.huaj.tk/tags/%E8%81%9A%E9%A4%90/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/tags/%E5%A4%A7%E5%AD%A6%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2799,35 +2799,7 @@
 
   
   <url>
-    <loc>https://blog.huaj.tk/categories/all/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/software/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.huaj.tk/categories/git/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2841,56 +2813,7 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/iptables/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.huaj.tk/categories/linux/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/archlinux/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/ubuntu/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/iptables/ubuntu/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/archlinux/linux/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/ubuntu/%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/archlinux/%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2904,84 +2827,7 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/linux/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/archlinux/linux/%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.huaj.tk/categories/vscode/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/linux/%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/linux/ubuntu/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E5%8A%A8%E6%BC%AB/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/java/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E7%90%90%E7%A2%8E/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E6%97%A5%E5%B8%B8/%E7%90%90%E7%A2%8E/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2995,41 +2841,6 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/posts/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/archlinux/gentoo/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/archlinux/gentoo/linux/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.huaj.tk/categories/archlinux/gentoo/linux/%E5%A5%87%E5%A5%87%E6%80%AA%E6%80%AA%E7%9A%84%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2021-06-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.huaj.tk/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
@@ -3037,56 +2848,168 @@
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/c/</loc>
+    <loc>https://blog.huaj.tk/categories/firefox%E4%B8%8Echrome/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://blog.huaj.tk/categories/vps/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/%E9%98%85%E8%AF%BB/</loc>
+    <loc>https://blog.huaj.tk/categories/wordpress%E6%97%A7%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E6%83%B3%E6%B3%95/</loc>
+    <loc>https://blog.huaj.tk/categories/windows/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E6%83%B3%E6%B3%95/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://blog.huaj.tk/categories/%E5%8A%A8%E7%94%BB%E7%95%AA%E5%89%A7/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E6%83%B3%E6%B3%95/%E6%97%A5%E5%B8%B8/%E7%90%90%E7%A2%8E/</loc>
+    <loc>https://blog.huaj.tk/categories/%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E6%83%B3%E6%B3%95/%E7%90%90%E7%A2%8E/</loc>
+    <loc>https://blog.huaj.tk/categories/%E6%91%84%E5%BD%B1/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.huaj.tk/categories/%E5%AD%A6%E4%B9%A0/%E7%90%90%E7%A2%8E/</loc>
+    <loc>https://blog.huaj.tk/categories/%E6%97%85%E6%B8%B8/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E6%97%A7%E4%B8%96%E7%95%8C%E7%8B%97%E7%B2%AE/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E6%B5%81%E6%B0%B4%E8%B4%A6/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/linux/archlinux/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/linux/deepin-wine/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/linux/linux%E6%A1%8C%E9%9D%A2/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/vps/nextcloud/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/vps/wordpress/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E5%AD%A6%E4%B9%A0/c/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E5%AD%A6%E4%B9%A0/cmake/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E5%AD%A6%E4%B9%A0/java/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E5%AD%A6%E4%B9%A0/%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E6%B5%81%E6%B0%B4%E8%B4%A6/%E7%9C%9F-%E6%B5%81%E6%B0%B4%E8%B4%A6/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E6%B5%81%E6%B0%B4%E8%B4%A6/%E9%A5%AD%E5%A0%82%E9%A5%AE%E6%96%99%E8%AF%95%E9%A5%AE%E7%B3%BB%E5%88%97/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/wsl/</loc>
+    <lastmod>2021-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.huaj.tk/categories/hexo/</loc>
     <lastmod>2021-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
