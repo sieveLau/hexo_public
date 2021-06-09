@@ -198,6 +198,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/e0942e65/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Sieve Lau">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nugo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/e0942e65/" class="post-title-link" itemprop="url">Wsl编译openwrt</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-12 08:19:10" itemprop="dateCreated datePublished" datetime="2021-05-12T08:19:10+08:00">2021-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-09 00:42:21" itemprop="dateModified" datetime="2021-06-09T00:42:21+08:00">2021-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">虚拟机</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/wsl/" itemprop="url" rel="index"><span itemprop="name">wsl</span></a>
+                </span>
+            </span>
+
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>178</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>按正常编译，到最后会有个报错，find说某某路径包含在PATH里，execdir不安全（<code>find: The relative path &#39;files&#39; is included in the PATH environment variable, which is insecure in combination with the -execdir action of find. Please remove that entry from $PATH</code>）。原因是wsl的PATH比较特殊，包含了windows的PATH变量，用<code>echo $PATH</code>就能发现不一样的地方：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ <span class="built_in">echo</span> <span class="variable">$PATH</span></span><br><span class="line">/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/<span class="built_in">local</span>/games:/mnt/c/program files (x86)/common files/oracle/java/javapath:/mnt/c/windows/system32:/mnt/c/windows:...</span><br></pre></td></tr></table></figure>
+
+<p>为了编译通过，需要临时把PATH改成正常的，比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/<span class="built_in">local</span>/games</span><br></pre></td></tr></table></figure>
+
+<p>之后再<code>make</code>就能编译通过了。</p>
+<p>参考<a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/discussions/5099">microsoft/WSL#5099</a>。</p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/e0942e65/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/547dc98a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1217,121 +1334,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/7078fec4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Sieve Lau">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nugo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/7078fec4/" class="post-title-link" itemprop="url">MathJax与Hugo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-04-19 07:09:26" itemprop="dateCreated datePublished" datetime="2021-04-19T07:09:26+08:00">2021-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hugo/" itemprop="url" rel="index"><span itemprop="name">hugo</span></a>
-                </span>
-            </span>
-
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-             
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>230</span>
-            </span>
-
-
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Markdown里显示公式一般用的是MathJax。用中文搜索Hugo上的MathJax，都是比较老的教程，比如<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/109284344">知乎|使用了静态网页生成器：从WordPress 到 Hugo</a>。</p>
-<p>MathJax是发布在Github上的，项目地址：<a target="_blank" rel="noopener" href="https://github.com/mathjax/MathJax">MathJax</a>。根据它的README.md可知可以把需要用到的js放到服务器上，用自己的服务器来提供所需的组件。</p>
-<p><del>还不是因为不喜欢让cdn加载</del></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/mathjax/MathJax.git mj-tmp</span><br><span class="line">mv mj-tmp/es5 &lt;hugo的static目录&gt;/mathjax</span><br><span class="line">rm -rf mj-tmp</span><br></pre></td></tr></table></figure>
-
-<p>随后，在主题提供的header-addtion或者类似的提供往html的header里添加代码的文件里添加script。比如对于官方推荐的ananke主题，这个添加header的文件是themes/ananke/layouts/partials/head-additions.html。往该文件中添加：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">&quot;MathJax-script&quot;</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">&quot;/mathjax/tex-chtml.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>即可让博客实现显示公式的功能。</p>
-<p>$$<br>1+1=2<br>$$</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/7078fec4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1403,7 +1405,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-count">216</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1416,7 +1418,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">183</span>
+        <span class="site-state-item-count">184</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

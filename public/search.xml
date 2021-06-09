@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>agefans可用地址</title>
+      <link href="/posts/12735e6d/"/>
+      <url>/posts/12735e6d/</url>
+      
+        <content type="html"><![CDATA[<div class="admonition note"><p>使用程序自动化测试并获取“备用地址”</p></div><embed src="https://static.huaj.tk/agefans_history.txt">]]></content>
+      
+      
+      <categories>
+          
+          <category> 动画番剧 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo安装指北</title>
       <link href="/posts/a33b293c/"/>
       <url>/posts/a33b293c/</url>
@@ -660,6 +679,8 @@
             <tag> Full Cone </tag>
             
             <tag> nat1 </tag>
+            
+            <tag> Ubuntu </tag>
             
         </tags>
       
