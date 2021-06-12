@@ -198,6 +198,115 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/cfe4ab51/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Sieve Lau">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nugo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/cfe4ab51/" class="post-title-link" itemprop="url">服务器又搬家</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-30 23:52:58" itemprop="dateCreated datePublished" datetime="2020-11-30T23:52:58+08:00">2020-11-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vps/" itemprop="url" rel="index"><span itemprop="name">vps</span></a>
+                </span>
+            </span>
+
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>197</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Nginx个毛，换成Apache了。</p>
+<p>主要原因是CentOS属实老古董，仓库里的Nginx都不知道是什么年代的。自己编译的Nginx想要添加模块难上天。反正就是各种不方便。所以就换成Ubuntu 20.04了。中间还去Vultr开了个“钟点机”，拿来临时放备份。</p>
+<p>迁移里面最大的坑就是MySQL了，Ubuntu安装的8.0跟5.7导出的备份不兼容，连密码都改不了。只能各种骚操作降级回5.7.32。降级之后倒是好了，配置完Apache之后所有网站都无痛启动了。</p>
+<p>装官方仓库的Apache就是好，什么a2enmod、a2ensite、apache2ctl用起来真顺手，想要添加组件直接apt就完事。哪还需要手动ln -s啊。</p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/cfe4ab51/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/ce1bdff1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1193,120 +1302,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/ce1ef601/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Sieve Lau">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nugo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/ce1ef601/" class="post-title-link" itemprop="url">绕过outlook垃圾分类误判的方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-25 17:27:42" itemprop="dateCreated datePublished" datetime="2020-09-25T17:27:42+08:00">2020-09-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/windows/" itemprop="url" rel="index"><span itemprop="name">windows</span></a>
-                </span>
-            </span>
-
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-             
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>186</span>
-            </span>
-
-
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>总体参考：<a target="_blank" rel="noopener" href="https://www.v2ex.com/t/684677?__cf_chl_jschl_tk__=b7ce7de211dea23f01241c299fa9e6a5904335b2-1600940120-0-ARFCXprFLw52K9o0y8IjKuy8JrJzU5pokx0Y0gwtg4UlWO1iyfD_5qcyMdEri8RovtO7aQwiF6dOlR1yWrao2en0z3Ajnnqu1AZqhvsECZufs5P95jhfJ7R-4lBKEPsTr5hD8zQvel-ckQRlG9RkEK7mFAwuo2ruJMQObN0--wc02_2r9cc08176nWx1ncRo-Hq3p4SPpJg-XtruvrwpuaU6TkM7excNk-_G1QwE4V2qrvROZqRo3vMn0T5vgJmtlzz2VMfg8enIHA5TzvWYA1AGqHHlhxTeGyV_Zwh3LqXRHKMQD6s0rRzGGr0CaD4-AXdBlncdMOUe24t4kdD0KyA">v2ex</a>。</p>
-<p>首先去<a target="_blank" rel="noopener" href="https://asia.flow.microsoft.com/zh-cn/">Microsoft Power Automate</a>，在左侧点击“我的流”：</p>
-<p>547</p>
-<p>然后“新建”-“自动”：</p>
-<p>634</p>
-<p>新出来的界面，触发器搜索“如果有新电子邮件到达”，注意因为是穷鬼，所以没有365，选择outlook.com的项：</p>
-<p>761</p>
-<p>创建之后，文件夹改成“垃圾邮件”。然后点击“新步骤”，搜索“移动电子邮件”，选择不是365的那个：</p>
-<p>889</p>
-<p>消息ID就选“消息ID”，文件夹选“收件箱”：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/ce1ef601/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1378,7 +1373,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1391,7 +1386,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">188</span>
+        <span class="site-state-item-count">190</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

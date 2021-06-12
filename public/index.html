@@ -412,6 +412,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/cb6d659d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Sieve Lau">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nugo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/cb6d659d/" class="post-title-link" itemprop="url">资源管理器“文档”变“Documents”的修复方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-12 17:53:54 / 修改时间：18:09:54" itemprop="dateCreated datePublished" datetime="2021-06-12T17:53:54+08:00">2021-06-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/windows/" itemprop="url" rel="index"><span itemprop="name">windows</span></a>
+                </span>
+            </span>
+
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>212</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>由于新装了NVMe而重装了系统（前情提要：<a href="/posts/3719364f/">NVMe固态与重装Windows</a>），在移动文件夹的过程里，把我的用户目录的“文档”文件夹的<strong>只读</strong>属性弄丢了，导致在资源管理器里总是显示“Documents”。</p>
+<p>以前也曾经遇到这样的问题，只是一直没有修复的方法。今天终于忍不住，Google看了几篇文章，最终是<a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/profile/075a8202-9a5d-482b-844b-7c0e44883551">王小石</a>在微软官方论坛的回答<a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/windows/forum/windows8_1-files/%e6%96%87%e4%bb%b6%e8%b5%84%e6%ba%90%e7%ae%a1/dbd074c3-430e-4171-8099-1fb6d32b1c77">文件资源管理器中“文档”变为“Documents”……</a>中解决了这个问题。</p>
+<p>根本原因就是因为ReadOnly属性没了，所以资源管理器就不理desktop.ini的建议来修改图标和显示本地化名字（文档）。修复方式就是用<code>attrib</code>指令把Documents目录重新加上只读属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attrib +R Documents</span><br></pre></td></tr></table></figure>
+
+<p>就修好了：</p>
+<img src="/posts/cb6d659d/e0b8fee9d1c11ecbf7fa39c0351a700d277a513f4e27af03b0dd6ae2bfb8b07f.png" class alt="图 1">  
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/cb6d659d/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/3719364f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1197,121 +1303,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/366c20ff/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Sieve Lau">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nugo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/366c20ff/" class="post-title-link" itemprop="url">Ubuntu编译gnucash</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-15 14:48:25" itemprop="dateCreated datePublished" datetime="2021-05-15T14:48:25+08:00">2021-05-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-09 02:46:15" itemprop="dateModified" datetime="2021-06-09T02:46:15+08:00">2021-06-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-             
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>445</span>
-            </span>
-
-
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="工作目录"><a href="#工作目录" class="headerlink" title="工作目录"></a>工作目录</h2><p>直接在内存里编译：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> $(mktemp -d)</span><br></pre></td></tr></table></figure>
-
-<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p>官网<a target="_blank" rel="noopener" href="https://www.gnucash.org/index.phtml?lang=zh_CN">安装</a>页面，Linux源码，会跳转到sourceforge下载，是个tar.bz2（例如<code>gnucash-4.5.tar.bz2</code>），放到工作目录里。</p>
-<p>解压得到源码目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xf gnucash-4.5.tar.bz2</span><br></pre></td></tr></table></figure>
-
-<p>此时工作目录应有：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── gnucash-4.5</span><br><span class="line">└── gnucash-4.5.tar.bz2</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/366c20ff/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1383,7 +1374,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1396,7 +1387,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">188</span>
+        <span class="site-state-item-count">190</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -198,6 +198,120 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/2d128ea0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Sieve Lau">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nugo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2d128ea0/" class="post-title-link" itemprop="url">archlinux音量管理器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-24 17:10:51" itemprop="dateCreated datePublished" datetime="2019-02-24T17:10:51+08:00">2019-02-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/archlinux/" itemprop="url" rel="index"><span itemprop="name">archlinux</span></a>
+                </span>
+            </span>
+
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+             
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>223</span>
+            </span>
+
+
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Archlinux内置了asla，所以只需要安装用来调整配置的Sound servers就可以了。根据<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/index.php/sound_system">Arch Wiki</a>的写法，选择了<a target="_blank" rel="noopener" href="https://www.archlinux.org/packages/?name=pulseaudio">pulseaudio</a>。pacman安装完之后只是有了server，还需要配置界面<a target="_blank" rel="noopener" href="https://www.archlinux.org/packages/?name=pavucontrol">pavucontrol</a>和系统托盘<a target="_blank" rel="noopener" href="https://www.archlinux.org/packages/?name=pasystray">pasystray</a>。为了利用音量键调整声音，需要安装<a target="_blank" rel="noopener" href="https://aur.archlinux.org/packages/pulseaudio-ctl"><strong>pulseaudio-ctl</strong></a>，然后在Settings-Keyboard里面设置快捷键。pulseaudio-ctl的用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/bin/pulseaudio-ctl &#123;up,down,mute,mute-input,set,atmost,full-status&#125; [n]</span><br><span class="line"></span><br><span class="line"> Where up and down adjust volume in ±5 % increments</span><br><span class="line"> Where up and down [n] adjust volume in ±n % increments</span><br><span class="line"> Where mute toggles the mute status on/off</span><br><span class="line"> Where mute-input toggles the input status on/off</span><br><span class="line"> Where set set the volume to [n] %</span><br><span class="line"> Where atmost only takes effect if current volume is higher than [n]</span><br><span class="line"> Where full-status prints volume level, sink and source mute state to stdout</span><br></pre></td></tr></table></figure>
+
+<p>如果是在xfce4下面，打开Settings-Session and Startup-Application Autostart，添加一个/usr/bin/pasystray的启动项就好了。</p>
+<p>参考： <a target="_blank" rel="noopener" href="https://www.linuxquestions.org/questions/slackware-14/pulseaudio-and-volume-buttons-4175564374/">SOLVED PulseAudio and volume buttons</a>，<a target="_blank" rel="noopener" href="https://bbs.archlinux.org/viewtopic.php?id=124513">pulseaudio-ctl: vol+/- and mute from the shell or shortcut keys</a></p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2d128ea0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/164ed635/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1198,119 +1312,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.huaj.tk/posts/80a968e4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Sieve Lau">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nugo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/80a968e4/" class="post-title-link" itemprop="url">阳山</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-02-09 12:20:58" itemprop="dateCreated datePublished" datetime="2019-02-09T12:20:58+08:00">2019-02-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%85%E6%B8%B8/" itemprop="url" rel="index"><span itemprop="name">旅游</span></a>
-                </span>
-            </span>
-
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-             
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span>381</span>
-            </span>
-
-
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span>1分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>昨天去阳山看梨花。村子在一个山村里，确确实实的世外桃源：电视看的是卫星电视，手机只有移动有2G信号，网络断绝。应该是妈妈的朋友招待我们，非常热情，总是想让我们带只阳山鸡回去。</p>
-<p>90我们好不容易才推掉。主人家生意兴隆，听说除了春节这个月，其他时候没什么游客，一年的旅游收入主要就看梨花开的这个月。靠山吃山。等到一点终于吃上了午饭。（鸡哥，对不起！）</p>
-<p>吃完饭出去看花。</p>
-<p>[265 [407 [549 [691 [833 [975</p>
-<p>已经过了全盛的时候，有的花开始谢了。不过漫山遍野都是梨花的感觉，让人明白“忽如一夜春风来，千树万树梨花开”的那种雪是什么样的感受。</p>
-<p>梨花林间有一些破败的泥瓦屋，有的已经塌了一半了。据说屋子的主人家每年春节还是会回来烧香拜神，但是没有把房子修一修的想法。</p>
-<p>下山的路上看见挺多梨树被拔起来堆在路边，挺可惜的。毕竟梨树长得那么慢，几十年才能开花得像这山那么好看。说没了就没了，挺可惜的。</p>
-<p>回程的路很难走，高速路被封，两个入口塞车一个路口封闭，当地人开车又不守规矩，国道时速60（米）。直到半夜才到家。</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/80a968e4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1382,7 +1383,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1395,7 +1396,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">188</span>
+        <span class="site-state-item-count">190</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
