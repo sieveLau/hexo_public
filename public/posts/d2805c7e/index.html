@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="使用lnmp一键包安装redis，它会默认开放本地回环来让其他应用连接。更加高效的方法是用Unix Domain Socket来连接，那就要修改相关的配置文件。 如果不知道配置文件在哪，用locate命令来找。 设置redis.conf参考digitalocean的教程，修改redis.conf，将 supervised no 改成 supervised systemd 以便之后写systemd">
+  <meta name="description" content="使用lnmp一键包安装redis，它会默认开放本地回环来让其他应用连接。更加高效的方法是用Unix Domain Socket来连接，那就要修改相关的配置文件。 如果不知道配置文件在哪，用locate命令来找。   设置redis.conf参考digitalocean的教程，修改redis.conf，将supervised no改成supervised systemd，以便之后写systemd u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在LNMP的基础上改Redis为UDS连接">
 <meta property="og:url" content="https://blog.huaj.tk/posts/d2805c7e/index.html">
 <meta property="og:site_name" content="Nugo">
-<meta property="og:description" content="使用lnmp一键包安装redis，它会默认开放本地回环来让其他应用连接。更加高效的方法是用Unix Domain Socket来连接，那就要修改相关的配置文件。 如果不知道配置文件在哪，用locate命令来找。 设置redis.conf参考digitalocean的教程，修改redis.conf，将 supervised no 改成 supervised systemd 以便之后写systemd">
+<meta property="og:description" content="使用lnmp一键包安装redis，它会默认开放本地回环来让其他应用连接。更加高效的方法是用Unix Domain Socket来连接，那就要修改相关的配置文件。 如果不知道配置文件在哪，用locate命令来找。   设置redis.conf参考digitalocean的教程，修改redis.conf，将supervised no改成supervised systemd，以便之后写systemd u">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-21T06:57:18.000Z">
-<meta property="article:modified_time" content="2021-06-08T07:07:46.681Z">
+<meta property="article:modified_time" content="2021-06-15T04:13:03.629Z">
 <meta property="article:author" content="Sieve Lau">
 <meta property="article:tag" content="domain socket">
 <meta property="article:tag" content="redis">
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-15 12:13:03" itemprop="dateModified" datetime="2021-06-15T12:13:03+08:00">2021-06-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>455</span>
+              <span>425</span>
             </span>
 
 
@@ -283,36 +283,36 @@
 
       
         <p>使用<a target="_blank" rel="noopener" href="https://lnmp.org/">lnmp</a>一键包安装redis，它会默认开放本地回环来让其他应用连接。更加高效的方法是用Unix Domain Socket来连接，那就要修改相关的配置文件。</p>
-<p>如果不知道配置文件在哪，用locate命令来找。</p>
-<h2 id="设置redis-conf"><a href="#设置redis-conf" class="headerlink" title="设置redis.conf"></a>设置redis.conf</h2><p>参考<a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-install-redis-from-source-on-ubuntu-18-04">digitalocean的教程</a>，修改redis.conf，将</p>
-<p>supervised no</p>
-<p>改成</p>
-<p>supervised systemd</p>
-<p>以便之后写systemd unit来管理redis。然后将dir改成：</p>
-<p>dir /var/lib/redis</p>
-<p>来让redis 的数据库放在这个文件夹里，符合FHS规范，方便管理。</p>
-<span id="more"></span>
-<p>然后去掉unixsocket和unixsocketperm前面的注释，修改成：</p>
-<p>unixsocket /var/run/redis/redis.sock<br>unixsocketperm 770</p>
-<p>第一行设定socket文件在哪，第二行设定socket的权限。关于权限的讨论，看github的这个issue：<a target="_blank" rel="noopener" href="https://github.com/NodeRedis/node-redis/issues/204">enable redis connection via unix domain socket instead of tcp #204</a>。</p>
-<h2 id="设置socket目录开机创建"><a href="#设置socket目录开机创建" class="headerlink" title="设置socket目录开机创建"></a>设置socket目录开机创建</h2><p>为了保证/var/run/redis在开机时存在而且权限正确，需要新建一个<a target="_blank" rel="noopener" href="https://serverfault.com/questions/74796/directory-in-var-run-gets-deleted-after-hard-reboot">tmpfile.d文件</a>：</p>
-<p>touch /usr/lib/tmpfiles.d/redis.conf</p>
-<p>里面写：</p>
-<p>d /var/run/redis 0770 redis redis</p>
-<h2 id="systemd-Unit文件"><a href="#systemd-Unit文件" class="headerlink" title="systemd Unit文件"></a>systemd Unit文件</h2><p>创建一个redis.service文件：</p>
-<p>touch /etc/systemd/system/redis.service</p>
-<p>如果里面有东西，就先清空。里面要写：</p>
-<p>[Unit]<br>Description=Redis In-Memory Data Store<br>After=network.target<br>[Service]<br>User=redis<br>Group=redis<br>Type=notify<br>ExecStart=/usr/local/bin/redis-server /etc/redis/redis.conf<br>ExecStop=/usr/local/bin/redis-cli shutdown<br>Restart=always<br>[Install]<br>WantedBy=multi-user.target</p>
-<p>注意Type=notify，DigitalOcean没有提到这一点，但是因为supervised写了systemd，如果不指定这一项会导致unit启动失败。</p>
-<h2 id="创建redis用户-组"><a href="#创建redis用户-组" class="headerlink" title="创建redis用户/组"></a>创建redis用户/组</h2><p>创建系统用户，且创建同名的组，但是不在/home里创建目录：</p>
-<p>useradd –system -U -M redis</p>
-<p>然后创建/var/lib/redis和/var/run/redis，并且设置好权限：</p>
-<p>mkdir /var/lib/redis /var/run/redis<br>chown redis:redis /var/lib/redis /var/run/redis<br>chmod 770 /var/lib/redis</p>
-<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>启动redis：</p>
-<p>systemctl start redis</p>
-<p>其他需要连接redis的需要加入redis用户组：</p>
-<p>usermod -a -G redis &lt;user_name&gt;</p>
+<div class="admonition info"><p>如果不知道配置文件在哪，用locate命令来找。</p>
+</div>
 
+<h2 id="设置redis-conf"><a href="#设置redis-conf" class="headerlink" title="设置redis.conf"></a>设置redis.conf</h2><p>参考<a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-install-redis-from-source-on-ubuntu-18-04">digitalocean的教程</a>，修改redis.conf，将<code>supervised no</code>改成<code>supervised systemd</code>，以便之后写<code>systemd unit</code>来管理redis。然后将<code>dir</code>改成：<code>dir /var/lib/redis</code>来让redis的数据库放在这个文件夹里，符合FHS规范，方便管理。</p>
+<p>然后去掉<code>unixsocket</code>和<code>unixsocketperm</code>前面的注释，修改成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unixsocket /var/run/redis/redis.sock</span><br><span class="line">unixsocketperm 770</span><br></pre></td></tr></table></figure>
+
+<p><code>unixsocket</code>设定socket文件在哪，<code>unixsocketperm</code>设定socket的权限。</p>
+<div class="admonition info"><p>关于权限的讨论，看github的这个issue：<a target="_blank" rel="noopener" href="https://github.com/NodeRedis/node-redis/issues/204">enable redis connection via unix domain socket instead of tcp #204</a>。</p>
+</div>
+
+<h2 id="设置socket目录开机创建"><a href="#设置socket目录开机创建" class="headerlink" title="设置socket目录开机创建"></a>设置socket目录开机创建</h2><p>为了保证<code>/var/run/redis</code>在开机时存在而且权限正确，需要新建一个<a target="_blank" rel="noopener" href="https://serverfault.com/questions/74796/directory-in-var-run-gets-deleted-after-hard-reboot">tmpfile.d文件</a><code>/usr/lib/tmpfiles.d/redis.conf</code>里面写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d /var/run/redis 0770 redis redis</span><br></pre></td></tr></table></figure>
+
+<h2 id="systemd-Unit文件"><a href="#systemd-Unit文件" class="headerlink" title="systemd Unit文件"></a>systemd Unit文件</h2><p>创建<code>/etc/systemd/system/redis.service</code>,内容是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Redis In-Memory Data Store</span><br><span class="line">After=network.target</span><br><span class="line">[Service]</span><br><span class="line">User=redis</span><br><span class="line">Group=redis</span><br><span class="line">Type=notify</span><br><span class="line">ExecStart=/usr/local/bin/redis-server /etc/redis/redis.conf</span><br><span class="line">ExecStop=/usr/local/bin/redis-cli shutdown</span><br><span class="line">Restart=always</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<div class="admonition warning"><p class="admonition-title">Type=notify
+</p><p>注意<code>Type=notify</code>，因为supervised写了systemd，如果不指定这一项会导致unit启动失败。</p>
+</div>
+
+<h2 id="创建redis用户-组"><a href="#创建redis用户-组" class="headerlink" title="创建redis用户/组"></a>创建redis用户/组</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd --system -U -M redis <span class="comment">#创建系统用户，且创建同名的组，但是不在/home里创建目录</span></span><br></pre></td></tr></table></figure>
+
+<p>然后创建<code>/var/lib/redis</code>和<code>/var/run/redis</code>，并且设置好权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /var/lib/redis /var/run/redis</span><br><span class="line">sudo chown redis:redis /var/lib/redis /var/run/redis</span><br><span class="line">sudo chmod 770 /var/lib/redis</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动redis"><a href="#启动redis" class="headerlink" title="启动redis"></a>启动redis</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> --now redis</span><br></pre></td></tr></table></figure>
+
+<p>其他需要连接redis的需要加入redis用户组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -a -G redis &lt;user_name&gt;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -413,7 +413,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEredis-conf"><span class="nav-number">1.</span> <span class="nav-text">设置redis.conf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEsocket%E7%9B%AE%E5%BD%95%E5%BC%80%E6%9C%BA%E5%88%9B%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">设置socket目录开机创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#systemd-Unit%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">systemd Unit文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAredis%E7%94%A8%E6%88%B7-%E7%BB%84"><span class="nav-number">4.</span> <span class="nav-text">创建redis用户&#x2F;组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F"><span class="nav-number">5.</span> <span class="nav-text">结束</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEredis-conf"><span class="nav-number">1.</span> <span class="nav-text">设置redis.conf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AEsocket%E7%9B%AE%E5%BD%95%E5%BC%80%E6%9C%BA%E5%88%9B%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">设置socket目录开机创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#systemd-Unit%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">systemd Unit文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAredis%E7%94%A8%E6%88%B7-%E7%BB%84"><span class="nav-number">4.</span> <span class="nav-text">创建redis用户&#x2F;组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8redis"><span class="nav-number">5.</span> <span class="nav-text">启动redis</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -429,7 +429,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">218</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -442,7 +442,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">190</span>
+        <span class="site-state-item-count">194</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

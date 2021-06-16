@@ -29,7 +29,7 @@
 <meta property="og:description" content="用Snap商店的Nextcloud来部署虽然开始时能够节省时间和精力，但是后面需要修改配置文件的时候反而更麻烦。Snap作为一种容器，很多东西是打包的时候写死了的，不能改。所以为了从Snap改成普通的网站部署模式，就有了这么一篇记录。 导出备份导出数据库在A上执行 1nextcloud.mysqldump &gt; my-old-nextcloud.sql  备份文件nextcloud-snap将">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-04-18T11:02:17.000Z">
-<meta property="article:modified_time" content="2021-06-12T06:23:47.602Z">
+<meta property="article:modified_time" content="2021-06-15T04:13:03.623Z">
 <meta property="article:author" content="Sieve Lau">
 <meta property="article:tag" content="nextcloud">
 <meta name="twitter:card" content="summary">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-12 14:23:47" itemprop="dateModified" datetime="2021-06-12T14:23:47+08:00">2021-06-12</time>
+                <time title="修改时间：2021-06-15 12:13:03" itemprop="dateModified" datetime="2021-06-15T12:13:03+08:00">2021-06-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,7 +261,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>757</span>
+              <span>768</span>
             </span>
 
 
@@ -273,7 +273,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>2分钟</span>
+              <span>3分钟</span>
             </span>
 
         </div>
@@ -290,7 +290,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nextcloud.mysqldump &gt; my-old-nextcloud.sql</span><br></pre></td></tr></table></figure>
 
 <h3 id="备份文件"><a href="#备份文件" class="headerlink" title="备份文件"></a>备份文件</h3><p><code>nextcloud-snap</code>将上传的文件文件存放在<code>/var/snap/nextcloud/common/nextcloud/data/</code>，卸载nextcloud-snap之前先把它移动到别的位置。</p>
-<h2 id="用tarball替换nextcloud-snap"><a href="#用tarball替换nextcloud-snap" class="headerlink" title="用tarball替换nextcloud-snap"></a>用tarball替换nextcloud-snap</h2><div class="admonition info"><p>这里假设服务器已经有了LNMP或者LAMP环境了。没有的话还要自己部署一下。</p>
+<h2 id="部署Nextcloud"><a href="#部署Nextcloud" class="headerlink" title="部署Nextcloud"></a>部署Nextcloud</h2><div class="admonition info"><p>这里假设服务器已经有了LNMP或者LAMP环境了。没有的话还要自己部署一下</p>
+</div>
+
+<div class="admonition info"><p>下文假设提供提供nextcloud服务的域名对应的<code>root</code>目录是<code>/var/www/nextcloud</code></p>
 </div>
 
 <h3 id="数据库用户"><a href="#数据库用户" class="headerlink" title="数据库用户"></a>数据库用户</h3><p>要给nextcloud创建一个数据库以及对应的用户。假设数据库与用户名字相同，都是<code>nextcloud</code>。</p>
@@ -300,27 +303,33 @@
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">CREATE DATABASE nextcloud;</span><br><span class="line">CREATE USER <span class="string">&#x27;nextcloud&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;密码&#x27;</span>;</span><br><span class="line">GRANT ALL ON nextcloud.* TO <span class="string">&#x27;nextcloud&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;密码&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">EXIT;</span><br></pre></td></tr></table></figure>
 
-<p>然后从B把数据库备份scp回来，并且导入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p nextcloud的数据库名字 &lt; my-old-nextcloud.sql</span><br></pre></td></tr></table></figure>
+<p>然后导入先前的备份文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p nextcloud &lt; my-old-nextcloud.sql</span><br></pre></td></tr></table></figure>
 
-<h3 id="部署nextcloud"><a href="#部署nextcloud" class="headerlink" title="部署nextcloud"></a>部署nextcloud</h3><p>nextcloud的最新release在<a target="_blank" rel="noopener" href="https://download.nextcloud.com/server/releases">这里</a>看，一般来说下载链接应该是<a target="_blank" rel="noopener" href="https://download.nextcloud.com/server/releases/latest.zip">latest.zip</a>。喜欢在哪个目录保存这个包没所谓，wget下来：</p>
+<h3 id="用tarball替换nextcloud-snap"><a href="#用tarball替换nextcloud-snap" class="headerlink" title="用tarball替换nextcloud-snap"></a>用tarball替换nextcloud-snap</h3><p>下载Nextcloud的最新<a target="_blank" rel="noopener" href="https://download.nextcloud.com/server/releases">release</a>，一般来说下载链接应该是<a target="_blank" rel="noopener" href="https://download.nextcloud.com/server/releases/latest.zip">latest.zip</a>。喜欢在哪个目录保存这个包没所谓，先下载下来：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.nextcloud.com/server/releases/latest.zip</span><br></pre></td></tr></table></figure>
 
-<p>unzip之后，假设服务器上提供nextcloud服务的域名对应的<code>root</code>目录是<code>/var/www/nextcloud</code>，把nextcloud目录里的所有东西搬到<code>/var/www/nextcloud</code>里面，记得把隐藏文件比如.htaccess带上。然后chown改一下<code>/var/www/nextcloud</code>的所有者信息。</p>
-<h2 id="恢复备份"><a href="#恢复备份" class="headerlink" title="恢复备份"></a>恢复备份</h2><p>从B那里把备份的文件夹scp到网站域名下面，和nextcloud其他的文件同级，然后chown恢复一下所有者信息。</p>
-<p>然后就可以输入网站域名打开了。一上来可能会让你新建一个管理员帐号，同时下面可以选用什么数据库，记得选MariaDB，输入对应的帐号密码和nextcloud数据库名字。管理员帐号的名字不能和迁移之前的那个一样。</p>
-<p>因为之前导入了数据库的备份，所以可能会什么都输好了但是爆炸了，这样的话就要重新设置一次nextclouduser的密码了：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select host,user,password from mysql.user where user=&#x27;nextclouduser&#x27;</span><br><span class="line"></span><br><span class="line">set password for &#x27;nextclouduser&#x27;@&#x27;localhost&#x27;=password(&#x27;密码&#x27;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>unzip之后，把解压出来的nextcloud目录里的所有东西搬到<code>/var/www/nextcloud</code>里面。</p>
+<p>!!! note “”<br>  记得把隐藏文件比如.htaccess带上</p>
+<p>最后检查<code>/var/www/nextcloud</code>的所有者信息，需要是Nginx运行所使用的用户。</p>
+<h3 id="恢复备份"><a href="#恢复备份" class="headerlink" title="恢复备份"></a>恢复备份</h3><p>把<a href="#%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6">备份文件</a>中备份起来的<code>data</code>目录移动<code>/var/www/nextcloud/data</code>，同样需要检查所有者信息。</p>
+<p>然后就可以输入网站域名打开了。一上来可能会让你新建一个管理员帐号，同时下面可以选用什么数据库，记得选MySQL/MariaDB，输入对应的帐号密码和nextcloud数据库名字。</p>
+<div class="admonition warning"><p class="admonition-title">管理员账号名字
+</p><p>管理员帐号的名字不能和迁移之前的那个一样。</p>
+</div>
+
+<p>因为之前导入了数据库的备份，所以可能会什么都输好了但是爆炸了，这样的话就要重新设置一次nextcloud数据库用户的密码了：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> host,<span class="keyword">user</span>,password <span class="keyword">from</span> mysql.user <span class="keyword">where</span> <span class="keyword">user</span><span class="operator">=</span><span class="string">&#x27;nextcloud&#x27;</span></span><br><span class="line"><span class="keyword">set</span> password <span class="keyword">for</span> <span class="string">&#x27;nextcloud&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span><span class="operator">=</span>password(<span class="string">&#x27;密码&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
 <p>就没问题了。</p>
 <h2 id="后遗症"><a href="#后遗症" class="headerlink" title="后遗症"></a>后遗症</h2><ul>
-<li>  之前登录的所有客户端都要重新登录</li>
-<li>  nextcloud-snap上的app数据不会丢失但是需要从官方库重新安装一次</li>
-<li>  iOS、Android的客户端会疯狂尝试登录，然后被服务器屏蔽IP 30秒，所以先退出客户端的登录，然后等半分钟再重新授权就好了。</li>
+<li>之前登录的所有客户端都要重新登录</li>
+<li>nextcloud-snap上的App数据不会丢失，但是需要从官方库重新安装App本体</li>
+<li>iOS、Android的客户端会疯狂尝试登录，然后被服务器屏蔽IP 30秒，所以先退出客户端的登录，然后等半分钟再重新授权就好了</li>
 </ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/nextcloud/nextcloud-snap/wiki/Migrating-from-nextcloud-snap-to-Nextcloud-server">Migrating from nextcloud snap to Nextcloud server</a> </li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/peida/archive/2013/03/15/2960802.html">每天一个linux命令（60）：scp命令</a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/nextcloud/nextcloud-snap/wiki/Migrating-from-nextcloud-snap-to-Nextcloud-server">Migrating from nextcloud snap to Nextcloud server</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/peida/archive/2013/03/15/2960802.html">每天一个linux命令（60）：scp命令</a></li>
 <li><a target="_blank" rel="noopener" href="https://websiteforstudents.com/setup-nextcloud-on-ubuntu-18-04-lts-beta-with-apache2-mariadb-and-php-7-1-support/">Setup NextCloud on Ubuntu 18.04 LTS with Apache2, MariaDB and PHP 7.1 Support</a></li>
 </ul>
 
@@ -423,7 +432,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E5%A4%87%E4%BB%BD"><span class="nav-number">1.</span> <span class="nav-text">导出备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">导出数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">备份文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8tarball%E6%9B%BF%E6%8D%A2nextcloud-snap"><span class="nav-number">2.</span> <span class="nav-text">用tarball替换nextcloud-snap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%94%A8%E6%88%B7"><span class="nav-number">2.1.</span> <span class="nav-text">数据库用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2nextcloud"><span class="nav-number">2.2.</span> <span class="nav-text">部署nextcloud</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%81%A2%E5%A4%8D%E5%A4%87%E4%BB%BD"><span class="nav-number">3.</span> <span class="nav-text">恢复备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E9%81%97%E7%97%87"><span class="nav-number">4.</span> <span class="nav-text">后遗症</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E5%A4%87%E4%BB%BD"><span class="nav-number">1.</span> <span class="nav-text">导出备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">导出数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">备份文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2Nextcloud"><span class="nav-number">2.</span> <span class="nav-text">部署Nextcloud</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%94%A8%E6%88%B7"><span class="nav-number">2.1.</span> <span class="nav-text">数据库用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8tarball%E6%9B%BF%E6%8D%A2nextcloud-snap"><span class="nav-number">2.2.</span> <span class="nav-text">用tarball替换nextcloud-snap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%81%A2%E5%A4%8D%E5%A4%87%E4%BB%BD"><span class="nav-number">2.3.</span> <span class="nav-text">恢复备份</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E9%81%97%E7%97%87"><span class="nav-number">3.</span> <span class="nav-text">后遗症</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -439,7 +448,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">218</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -452,7 +461,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">190</span>
+        <span class="site-state-item-count">194</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

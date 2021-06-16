@@ -21,16 +21,18 @@
     var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="今天忍不住不想再看WordPress天天抱怨要升级php，决定升tm的。从5.6升到7.2（因为lnmp 1.6官配支持7.2，1.7才是支持7.3，不敢冒险），然后WordPress无压力运行，nextcloud成功暴毙500. 面对这个老问题，这次好好查了论坛，终于找到了解决办法：  Had the same issue, was able to load nextcloud with php">
+  <meta name="description" content="今天忍不住不想再看WordPress天天抱怨要升级php，决定升**的。从5.6升到7.2（因为lnmp 1.6官配支持7.2，1.7才是支持7.3，不敢冒险），然后WordPress无压力运行，nextcloud成功暴毙500. 面对这个老问题，这次好好查了论坛，终于找到了解决办法：  Had the same issue, was able to load nextcloud with php">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nextcloud的php升级暴毙问题">
 <meta property="og:url" content="https://blog.huaj.tk/posts/cded3a50/index.html">
 <meta property="og:site_name" content="Nugo">
-<meta property="og:description" content="今天忍不住不想再看WordPress天天抱怨要升级php，决定升tm的。从5.6升到7.2（因为lnmp 1.6官配支持7.2，1.7才是支持7.3，不敢冒险），然后WordPress无压力运行，nextcloud成功暴毙500. 面对这个老问题，这次好好查了论坛，终于找到了解决办法：  Had the same issue, was able to load nextcloud with php">
+<meta property="og:description" content="今天忍不住不想再看WordPress天天抱怨要升级php，决定升**的。从5.6升到7.2（因为lnmp 1.6官配支持7.2，1.7才是支持7.3，不敢冒险），然后WordPress无压力运行，nextcloud成功暴毙500. 面对这个老问题，这次好好查了论坛，终于找到了解决办法：  Had the same issue, was able to load nextcloud with php">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-12T14:19:31.000Z">
-<meta property="article:modified_time" content="2021-06-08T07:07:46.464Z">
+<meta property="article:modified_time" content="2021-06-15T04:13:03.624Z">
 <meta property="article:author" content="Sieve Lau">
+<meta property="article:tag" content="nextcloud">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://blog.huaj.tk/posts/cded3a50/">
@@ -233,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-15 12:13:03" itemprop="dateModified" datetime="2021-06-15T12:13:03+08:00">2021-06-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,7 +262,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>197</span>
+              <span>184</span>
             </span>
 
 
@@ -284,17 +286,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天忍不住不想再看WordPress天天抱怨要升级php，决定升tm的。从5.6升到7.2（因为lnmp 1.6官配支持7.2，1.7才是支持7.3，不敢冒险），然后WordPress无压力运行，nextcloud成功暴毙500.</p>
+        <p>今天忍不住不想再看WordPress天天抱怨要升级php，决定升**的。从5.6升到7.2（因为lnmp 1.6官配支持7.2，1.7才是支持7.3，不敢冒险），然后WordPress无压力运行，nextcloud成功暴毙500.</p>
 <p>面对这个老问题，这次好好查了论坛，终于找到了<a target="_blank" rel="noopener" href="https://help.nextcloud.com/t/internal-server-error-going-from-php-7-0-to-php-7-2/35016/10">解决办法</a>：</p>
 <blockquote>
 <p>Had the same issue, was able to load nextcloud with php7.0, and it broke when switching to 7.1 and 7.2; it was an opcache issue.</p>
 <p>I suggest you remove the lines relating to Redis and memcache from your config:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;memcache.local&quot;</span>: <span class="string">&quot;\\OC\\Memcache\\Redis&quot;</span>,</span><br><span class="line"><span class="string">&quot;memcache.distributed&quot;</span>: <span class="string">&quot;\\OC\\Memcache\\Redis&quot;</span>,</span><br><span class="line"><span class="string">&quot;memcache.locking&quot;</span>: <span class="string">&quot;\\OC\\Memcache\\Redis&quot;</span>,</span><br></pre></td></tr></table></figure>
 </blockquote>
-<pre><code>&quot;memcache.local&quot;: &quot;\\\\OC\\\\Memcache\\\\Redis&quot;,
-&quot;memcache.distributed&quot;: &quot;\\\\OC\\\\Memcache\\\\Redis&quot;,
-&quot;memcache.locking&quot;: &quot;\\\\OC\\\\Memcache\\\\Redis&quot;,
-</code></pre>
-<p>就是把config/config.php里面的三行关于OPcache的配置删掉 （如果配置了redis也把redis的删掉）。删了之后果然成功运行起来了。</p>
+<p>把<code>config/config.php</code>里面的关于内存缓存的配置删掉，之后果然成功运行起来了。</p>
 
     </div>
 
@@ -320,6 +319,10 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/nextcloud/" rel="tag"># nextcloud</a>
+              <a href="/tags/php/" rel="tag"># php</a>
+          </div>
 
         
 
@@ -407,7 +410,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">218</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -420,7 +423,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">190</span>
+        <span class="site-state-item-count">194</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"blog.huaj.tk","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="起因是想装gogs，但是一直报错，查github发现MySQL版本要至少5.7.7。用lnmp一键包升级脚本无法成功升级，而且从source编译实在太费劲，所以选择用官方Binary来装。 备份数据库假设是有数据库root权限，那么用mysqldump来备份： 1mysqldump -uroot -p --all-databases &gt; database-bak.sql  将备份文件通过SF">
+  <meta name="description" content="起因是想装gogs，但是一直报错。最终在gogs#4894发现MySQL版本要至少5.7.7。用lnmp一键包升级脚本无法成功升级，而且从source编译实在太费劲，所以选择用官方Binary来装。 备份数据库假设是有数据库root权限，那么用mysqldump来备份： 1mysqldump -uroot -p --all-databases &gt; database-bak.sql  将备份文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将LAMP的MySQL改成官网Binary版|Centos 7（新坑）">
 <meta property="og:url" content="https://blog.huaj.tk/posts/eb32c1ed/index.html">
 <meta property="og:site_name" content="Nugo">
-<meta property="og:description" content="起因是想装gogs，但是一直报错，查github发现MySQL版本要至少5.7.7。用lnmp一键包升级脚本无法成功升级，而且从source编译实在太费劲，所以选择用官方Binary来装。 备份数据库假设是有数据库root权限，那么用mysqldump来备份： 1mysqldump -uroot -p --all-databases &gt; database-bak.sql  将备份文件通过SF">
+<meta property="og:description" content="起因是想装gogs，但是一直报错。最终在gogs#4894发现MySQL版本要至少5.7.7。用lnmp一键包升级脚本无法成功升级，而且从source编译实在太费劲，所以选择用官方Binary来装。 备份数据库假设是有数据库root权限，那么用mysqldump来备份： 1mysqldump -uroot -p --all-databases &gt; database-bak.sql  将备份文">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-27T14:08:08.000Z">
-<meta property="article:modified_time" content="2021-06-08T07:09:39.524Z">
+<meta property="article:modified_time" content="2021-06-15T04:13:03.629Z">
 <meta property="article:author" content="Sieve Lau">
 <meta property="article:tag" content="MySQL">
 <meta property="article:tag" content="CentOS 7">
@@ -236,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:09:39" itemprop="dateModified" datetime="2021-06-08T15:09:39+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-15 12:13:03" itemprop="dateModified" datetime="2021-06-15T12:13:03+08:00">2021-06-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,7 +259,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>676</span>
+              <span>684</span>
             </span>
 
 
@@ -283,42 +283,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>起因是想装<a target="_blank" rel="noopener" href="http://gogs.io/">gogs</a>，但是一直报错，<a target="_blank" rel="noopener" href="https://github.com/gogs/gogs/issues/4894#issuecomment-348861978">查github</a>发现MySQL版本要至少5.7.7。用<a target="_blank" rel="noopener" href="http://lnmp.org/">lnmp一键包</a>升级脚本无法成功升级，而且从source编译实在太费劲，所以选择用官方Binary来装。</p>
+        <p>起因是想装<a target="_blank" rel="noopener" href="http://gogs.io/">gogs</a>，但是一直报错。最终在<a target="_blank" rel="noopener" href="https://github.com/gogs/gogs/issues/4894#issuecomment-348861978">gogs#4894</a>发现MySQL版本要至少5.7.7。用<a target="_blank" rel="noopener" href="http://lnmp.org/">lnmp一键包</a>升级脚本无法成功升级，而且从source编译实在太费劲，所以选择用官方Binary来装。</p>
 <h2 id="备份数据库"><a href="#备份数据库" class="headerlink" title="备份数据库"></a>备份数据库</h2><p>假设是有数据库root权限，那么用mysqldump来备份：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p --all-databases &gt; database-bak.sql</span><br></pre></td></tr></table></figure>
 
 <p>将备份文件通过SFTP或者移到一个安全的地方，以供稍后恢复使用。</p>
-<h2 id="添加MySQL二进制源"><a href="#添加MySQL二进制源" class="headerlink" title="添加MySQL二进制源"></a>添加MySQL二进制源</h2><p>首先将原来的/etc/my.cnf改名为my.cnf.bak，因为更新之后直接用这个配置文件会无法启动mysqld。</p>
+<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p>首先将原来的/etc/my.cnf改名为my.cnf.bak，因为更新之后直接用这个配置文件会无法启动mysqld。</p>
 <p>根据MySQL的<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/linux-installation-yum-repo.html">官方文档</a>，有以下步骤：</p>
-<h3 id="添加二进制源"><a href="#添加二进制源" class="headerlink" title="添加二进制源"></a>添加二进制源</h3><p>首先要在<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/yum/%E4%B8%8B%E8%BD%BDrpm%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%BA%90%EF%BC%8C%E6%AF%94%E5%A6%82CentOS">https://dev.mysql.com/downloads/repo/yum/下载rpm格式的源，比如CentOS</a> 7就是RHEL 7的社区版，所以下载这个：</p>
-<p>872</p>
+<h3 id="添加二进制源"><a href="#添加二进制源" class="headerlink" title="添加二进制源"></a>添加二进制源</h3><p>首先要在<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/yum/">官网</a>下载rpm格式的源，比如CentOS 7就是RHEL 7的社区版，所以下载这个：</p>
+<p>879</p>
 <p>放到服务器上之后，用这个命令安装：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum localinstall mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
 
-
-
 <h3 id="启用需要的版本"><a href="#启用需要的版本" class="headerlink" title="启用需要的版本"></a>启用需要的版本</h3><p>首先看有哪些选项可以开/关：</p>
-<p>yum repolist all  grep mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum repolist all|grep mysql</span><br></pre></td></tr></table></figure>
+
 <p>大概会有这样的列表：</p>
-<p>1342</p>
+<p>1590</p>
 <p>一般是默认启用了mysql80-community，为了安全我要装mysql57-community，用下面的命令开关就好了：</p>
-<p>yum-config-manager –disable mysql80-community<br>yum-config-manager –enable mysql57-community</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --<span class="built_in">disable</span> mysql80-community</span><br><span class="line">yum-config-manager --<span class="built_in">enable</span> mysql57-community</span><br></pre></td></tr></table></figure>
+
 <p>这些命令运行的时候会输出一堆东西，忽略就行。完成之后检查一下：</p>
-<p>yum repolist enabled  grep mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum repolist enabled|grep mysql</span><br></pre></td></tr></table></figure>
+
 <p>确认无误就可以开始下一步了。</p>
-<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p>要把lnmp装的init.d脚本删掉，在/etc/init.d/mysql。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>要把lnmp装的init.d脚本删掉，在/etc/init.d/mysql。</p>
 <p>安装MySQL：</p>
-<p>yum install mysql-community-server</p>
-<p>会自动判断依赖而且装上，无脑y就是了。装完先别启动服务，编辑/etc/my.cnf，在[mysqld]添加一行skip-grant-tables，再加一行default_password_lifetime = 0，然后启动服务并检查是不是成功启动：</p>
-<p>service mysqld start<br>service mysqld status</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql-community-server</span><br></pre></td></tr></table></figure>
+
+<p>会自动判断依赖而且装上，无脑y就是了。装完先别启动服务，编辑<code>/etc/my.cnf</code>，在<code>[mysqld]</code>添加一行<code>skip-grant-tables</code>，再加一行<code>default_password_lifetime = 0</code>，然后启动服务并检查是不是成功启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start</span><br><span class="line">service mysqld status</span><br></pre></td></tr></table></figure>
+
 <p>然后直接mysql进入mysql的命令行，改密码：</p>
-<p>ALTER USER `root`@`localhost` IDENTIFIED BY ‘new_password’, `root`@`localhost` PASSWORD EXPIRE NEVER;</p>
-<p>比起官方文档里多出来的这PASSWORD EXPIRE NEVER是为了避免莫名其妙的密码过期导致服务器爆炸，参见：<a target="_blank" rel="noopener" href="https://stackoverflow.com/a/44475051%E3%80%82">https://stackoverflow.com/a/44475051。</a></p>
-<p>如果提示因为开了skip-grant-tables没办法ALTER，那就改用这个命令：</p>
-<p>update mysql.user set authentication_string=password(‘xxx’) where user=’root’ ;</p>
-<p>update这个命令是可选的，ALTER命令是必须要执行的。如果首先尝试alter但是报错，那就执行update命令，然后改my.cnf注释掉skip-grant-tables，重启mysqld服务，再执行alter。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> `root`@`localhost` IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;new_password&#x27;</span>, `root`@`localhost` PASSWORD EXPIRE NEVER;</span><br></pre></td></tr></table></figure>
+
+<p>比起官方文档里多出来的这PASSWORD EXPIRE NEVER是为了避免莫名其妙的密码过期导致服务器爆炸，参见：<a target="_blank" rel="noopener" href="https://stackoverflow.com/users/308901/mehmet-mercan">Mehmet MERCAN</a>在<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33387879/mysql-password-expired-cant-connect">Mysql password expired. Can’t connect</a>中的<a target="_blank" rel="noopener" href="https://stackoverflow.com/a/44475051">回答</a>。</p>
+<p>如果提示因为开了<code>skip-grant-tables</code>没办法<code>ALTER</code>，那就改用这个命令：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update mysql.user <span class="keyword">set</span> authentication_string<span class="operator">=</span>password(<span class="string">&#x27;xxx&#x27;</span>) <span class="keyword">where</span> <span class="keyword">user</span><span class="operator">=</span><span class="string">&#x27;root&#x27;</span> ;</span><br></pre></td></tr></table></figure>
+
+<p>update这个命令是可选的，ALTER命令是必须要执行的。如果首先尝试alter但是报错，那就执行update命令，然后改my.cnf注释掉<code>skip-grant-tables</code>，重启mysqld服务，再执行alter。</p>
 <h2 id="恢复数据库"><a href="#恢复数据库" class="headerlink" title="恢复数据库"></a>恢复数据库</h2><p>修改my.cnf重新打开domain socket，为了适应lnmp默认的配置，my.cnf里需要有下面几行：</p>
-<p>[client]<br>port            = 3306<br>socket          = /tmp/mysql.sock<br>[mysqld]<br>port            = 3306<br>socket          = /tmp/mysql.sock</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[client]</span></span><br><span class="line"><span class="attr">port</span>            = <span class="number">3306</span></span><br><span class="line"><span class="attr">socket</span>          = /tmp/mysql.sock</span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="attr">port</span>            = <span class="number">3306</span></span><br><span class="line"><span class="attr">socket</span>          = /tmp/mysql.sock</span><br></pre></td></tr></table></figure>
+
 <p>用phpmyadmin导入备份文件，还要执行mysql_upgrade -u root -p来完成数据升级。</p>
 
     </div>
@@ -422,7 +428,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">备份数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0MySQL%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">添加MySQL二进制源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BA%90"><span class="nav-number">2.1.</span> <span class="nav-text">添加二进制源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E9%9C%80%E8%A6%81%E7%9A%84%E7%89%88%E6%9C%AC"><span class="nav-number">2.2.</span> <span class="nav-text">启用需要的版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85MySQL"><span class="nav-number">3.</span> <span class="nav-text">安装MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">恢复数据库</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">备份数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85MySQL"><span class="nav-number">2.</span> <span class="nav-text">安装MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BA%90"><span class="nav-number">2.1.</span> <span class="nav-text">添加二进制源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E7%94%A8%E9%9C%80%E8%A6%81%E7%9A%84%E7%89%88%E6%9C%AC"><span class="nav-number">2.2.</span> <span class="nav-text">启用需要的版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.3.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">恢复数据库</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -438,7 +444,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">218</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -451,7 +457,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">190</span>
+        <span class="site-state-item-count">194</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

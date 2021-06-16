@@ -29,7 +29,7 @@
 <meta property="og:description" content="这mediawiki虽然是维基百科背后的技术基础，但是自己的document实在是写得太坑爹。它默认大家都是用Apache建站，所以对于Nginx需要做什么配置就会混在一堆杂乱的信息里，要自己摸。  上来就是一个wget、一个tar、一个nginx reload，我全放出去、全放出去了啊……然后我:wq退出vim，F5放在它首页上没按下去，按传统网站的点到为止它已经装完了。就在这时间，它一个Par">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-22T07:23:09.000Z">
-<meta property="article:modified_time" content="2021-06-08T07:07:46.457Z">
+<meta property="article:modified_time" content="2021-06-15T04:13:03.622Z">
 <meta property="article:author" content="Sieve Lau">
 <meta property="article:tag" content="坑爹">
 <meta property="article:tag" content="mediawiki">
@@ -239,7 +239,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-08 15:07:46" itemprop="dateModified" datetime="2021-06-08T15:07:46+08:00">2021-06-08</time>
+                <time title="修改时间：2021-06-15 12:13:03" itemprop="dateModified" datetime="2021-06-15T12:13:03+08:00">2021-06-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,7 +262,7 @@
              
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>429</span>
+              <span>431</span>
             </span>
 
 
@@ -299,8 +299,8 @@
 <p>点开这个链接，跟着配置了一堆，结果看见这句话的时候我整个人都懵逼了：</p>
 <blockquote>
 <p>If you’re serving MediaWiki with Nginx, you’ll need to also add something like this to your server conf:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">location</span> /rest.php/ &#123;</span><br><span class="line">  <span class="attribute">try_files</span> $uri $uri/ /rest.php?$query_string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>location /rest.php/ {<br>    try_files $uri $uri/ /rest.php?$query_string;<br>}</p>
 <p>加到Nginx的conf里面再reload，突然就可以了，把自己装的Parsoid和相应的配置全都恢复原状，依然可以。</p>
 <p>靠了，只需要加这个就完事了，mediawiki的安装文档又不好好写这个……真是恶心人。</p>
 
@@ -423,7 +423,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">218</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -436,7 +436,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">190</span>
+        <span class="site-state-item-count">194</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
